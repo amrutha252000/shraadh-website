@@ -1,0 +1,630 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shraadh</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="#">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/whatsapp.css">
+    
+     <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- =============================================== -->
+    <!-- 1. AOS ANIMATION STYLESHEET (ADD THIS) -->
+    <!-- =============================================== -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- =============================================== -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Your existing custom styles */
+        #scrollUp { display: none !important; }
+        body { font-family: 'Inter', sans-serif; color: #4A4A4A; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; font-weight: 600; color: #1A2E44; }
+        .hero__caption p, .footer-pera p, .modal-body p { font-size: 18px; line-height: 1.7; }
+        :root {
+            --primary-color: #1A2E44;
+            --accent-color: #C0A16E;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --background-light: #fdfdfd;
+        }
+        .section-tittle h2, h1, h2, h3, h4, h5, h6 { color: var(--primary-color); }
+        .section-tittle span { color: var(--accent-color); font-weight: 600; }
+        .btn, .button, .boxed-btn { background: var(--primary-color); border: 2px solid var(--primary-color) !important; }
+        .btn:hover, .button:hover, .boxed-btn:hover { background: var(--accent-color) !important; border-color: var(--accent-color) !important; color: #fff !important; }
+        .border-btn { border: 2px solid var(--accent-color) !important; background: transparent; color: var(--accent-color) !important; }
+        .border-btn:hover { background: var(--accent-color) !important; color: #fff !important; }
+        .main-menu ul li a:hover { color: var(--accent-color) !important; }
+        .single-place { transition: all 0.4s ease; border-radius: 12px; overflow: hidden; }
+        .single-place:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(26, 46, 68, 0.15); }
+        .single-place .place-img img { transition: transform 0.4s ease; }
+        .single-place:hover .place-img img { transform: scale(1.05); }
+        .ritual-carousel-content { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); color: var(--text-dark); padding: 50px; border-radius: 12px; min-height: 400px; display: flex; flex-direction: column; justify-content: center; box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1); }
+        .ritual-carousel-content h1 { font-size: 2.5rem; margin-bottom: 20px; color: var(--primary-color); }
+        .ritual-carousel-content p { font-size: 18px; line-height: 1.8; color: var(--text-light); max-width: 700px; margin-left: auto; margin-right: auto; }
+        .hero__caption h1 { margin-bottom: 0; }
+        .hero__caption p.hero-subheading { margin-top: 0; font-size: 1.75rem; font-family: 'Lora', serif; font-weight: 400; color: rgba(255, 255, 255, 0.9); letter-spacing: 1.5px;}
+        .logo2 img { height: 50px; width: auto; object-fit: contain; }
+
+        /*
+** Custom Styling for Ritual Carousel Indicators
+*/
+
+/* This makes the indicator container visible and positions it */
+#ritualCarousel .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    bottom: -30px; /* Positions the dots below the carousel content */
+    opacity: 1; /* Ensures they are not transparent */
+    z-index: 15;
+}
+
+/* This styles the individual dots */
+#ritualCarousel .carousel-indicators li {
+    background-color: #ccc; /* A neutral color for inactive dots */
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin: 0 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* This styles the active dot using your site's accent color */
+#ritualCarousel .carousel-indicators .active {
+    background-color: var(--accent-color); /* Uses the warm gold color */
+}
+/*
+** Vertically shift the hero text block upwards
+*/
+.hero__caption {
+    transform: translateY(-150px); /* Moves the block up by 80 pixels */
+}
+
+/*
+** Styling for Contact Info in Footer
+*/
+.footer-contact-info p {
+    color: #a5a5a5; /* A light grey that's easy to read on the dark background */
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.footer-contact-info p a {
+    color: #a5a5a5;
+    transition: color 0.3s ease;
+}
+.footer-contact-info p a:hover {
+    color: #fff; /* Brightens on hover */
+    text-decoration: underline;
+}
+.footer-contact-info .fas {
+    color: var(--accent-color); /* Uses your gold accent color for the icons */
+    margin-right: 10px;
+    width: 20px; /* Ensures icons are aligned */
+}
+
+/*
+** Reduce the height of the footer
+*/
+.footer-padding {
+    padding-top: 30px;    /* The original value is likely much larger */
+    padding-bottom: 10px; /* The original value is likely much larger */
+}
+
+
+
+/* Media query for smaller screens */
+@media (max-width: 767px) {
+    .hero__caption h2 {
+        font-size: 3.5rem;
+    }
+    .hero__caption .hero-subheading {
+        font-size: 1.2rem;
+    }
+}
+
+
+
+.hero-overly::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* A gradient that is darker at the bottom and fades to transparent at the top */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75), transparent 60%);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Apply the animation to the hero content */
+.hero__caption {
+    animation: fadeInUp 1.2s ease-out 0.5s;
+    animation-fill-mode: both; /* Keeps the final state of the animation */
+}
+
+
+
+/* Make the container a positioned element */
+        .single-slider {
+            position: relative;
+            overflow: hidden; /* Important to contain the video */
+        }
+
+        /* Style the video to act as a background */
+        .hero-video-bg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            z-index: -100; /* Place video far behind other content */
+            transform: translateX(-50%) translateY(-50%);
+            background-size: cover;
+        }
+
+        /* Ensure the dark overlay is on top of the video */
+        .hero-overly::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 46, 68, 0.6); /* Adjust darkness here */
+            z-index: -1; /* Sits between video and text content */
+        }
+
+        /* Ensure text content is on top of the overlay */
+        .hero__caption {
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Header Content -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-bottom header-sticky">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo logo2">
+                                    <a href="index.html"><img src="assets/img/logo3.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="blog.html">Details</a></li>
+                                            <li><a href="#contactForm">Contact Us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12"><div class="mobile_menu d-block d-lg-none"></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- slider Area Start-->
+        <!-- <div class="slider-area ">
+            <div class="slider-active">
+                <div class="single-slider hero-overly slider-height d-flex align-items-center" data-background="assets/img/hero4.jpg">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-9 col-lg-9 col-md-9"> -->
+                                <!-- Added animation to the hero text -->
+                                <!-- <div class="hero__caption text-center" data-aos="fade-up" data-aos-delay="200">
+                                    <h2 style="transform: translateY(-60px); font-size: 60px;">SHRAADH</h2>
+                                    <p class="hero-subheading" style="transform: translateY(-60px); ">Honouring your Ancestors</p>
+                                    <a href="#contactForm" class="btn hero-btn mt-4" style="transform: translateY(-100px);">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
+        <!-- slider Area End-->
+
+        <div class="slider-area ">
+            <div class="slider-active">
+                <!-- The data-background attribute is removed from this div -->
+                <div class="single-slider hero-overly slider-height d-flex align-items-center">
+
+                    <!-- VIDEO ELEMENT ADDED HERE -->
+                    <!-- The video will autoplay, be muted, and loop continuously. -->
+                    <video autoplay muted loop playsinline class="hero-video-bg">
+                        <!-- Make sure your video file is in this location -->
+                        <source src="assets/img/Floating_Flowers_Video_Created.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-xl-9 col-lg-9 col-md-9">
+                                <div class="hero__caption text-center">
+                                    <h2 style="transform: translateY(-60px); font-size: 60px; color: #ffffff;">SHRAADH</h2>
+                                    <p class="hero-subheading" style="transform: translateY(-60px); color: #ffffff;">Honouring your Ancestors</p>
+                                    <a href="#contactForm" class="btn hero-btn mt-4" style="transform: translateY(-100px);">Book Now</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ritual background Start -->
+        <div class="ritual-background-area servic-padding" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center mb-5">
+                            <span>Learn More About The Ritual</span>
+                            <h2>Ritual Background</h2>
+                        </div>
+                    </div>
+                </div>
+                <div id="ritualCarousel" class="carousel slide" data-ride="carousel">
+                    <!-- Carousel content remains the same -->
+                    <ol class="carousel-indicators">
+                        <li data-target="#ritualCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#ritualCarousel" data-slide-to="1" class="active"></li>
+                        <li data-target="#ritualCarousel" data-slide-to="2" class="active"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active"><div class="ritual-carousel-content text-center"><h1>What is Pind Daan?</h1><p>Pind Daan is a sacred offering we make to our ancestors — a way of saying, “You are remembered, you are loved, may you find peace.” Rooted in the Vedas and the Garuda Purana, it is a prayer that helps the soul move forward on its journey beyond this life. In places like Gaya, Varanasi, Haridwar, and other holy spots across India, this ritual becomes a powerful act of love, healing, and release.</p></div></div>
+                        <div class="carousel-item"><div class="ritual-carousel-content text-center"><h1>Importance of Pind Daan</h1><p>According to our ancient texts, when we perform Pind Daan with sincerity, we help free our ancestors from worldly ties and guide them toward peace. It is not just a ritual, but a sacred duty — fulfilling what is known as Pitru Rina, the debt of gratitude we owe our forefathers. And in doing so, we receive their blessings and bring peace into our own lives as well.</p></div></div>
+                        <div class="carousel-item"><div class="ritual-carousel-content text-center"><h1>How We Can Help You</h1><p>We know this is more than a journey — it’s a prayer, a farewell, a moment of deep emotion. We walk beside you with care, arranging every detail with respect — from sacred priests to peaceful accommodations in Gaya, Varanasi, Haridwar, and other places of significance. With gentle hands and open hearts, we help you honour your loved ones the way they truly deserve.</p></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Ritual background End -->
+
+        <!-- Favourite Places Start -->
+        <div class="favourite-place place-padding pb-0" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <!-- <span>FEATURED TOURS Packages</span> -->
+                            <h2>Punya Kshetras (Holy Places)</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <!-- Cards will animate individually -->
+                    
+                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                        <div class="single-place mb-30"><div class="place-img"><img src="assets/img/haridwar.jpg" alt=""></div><div class="place-cap pt-4"><div class="place-cap-top text-center"><h1>Haridwar</h1><div class="place-cap-bottom"><a href="#" class="btn btn-sm border-btn mt-3" data-toggle="modal" data-target="#haridwarDetailsModal">View Details</a></div></div></div></div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                        <div class="single-place mb-30"><div class="place-img"><img src="assets/img/gaya.jpg" alt=""></div><div class="place-cap pt-4"><div class="place-cap-top text-center"><h1>Gaya</h1><div class="place-cap-bottom"><a href="#" class="btn btn-sm border-btn mt-3" data-toggle="modal" data-target="#gayaDetailsModal">View Details</a></div></div></div></div>
+                    </div>
+                    <div class="col-xl-4 col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                        <div class="single-place mb-30"><div class="place-img"><img src="assets/img/varanasi.jpg" alt=""></div><div class="place-cap pt-4"><div class="place-cap-top text-center"><h1>Varanasi</h1><div class="place-cap-bottom"><a href="#" class="btn btn-sm border-btn mt-3" data-toggle="modal" data-target="#varanasiDetailsModal">View Details</a></div></div></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Favourite Places End -->
+
+        <!-- Other Places Start -->
+        <div class="other-places-area place-padding pb-0" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <h2>Other Punya Kshetras</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- The carousel itself will fade in, items will appear with it -->
+                <div class="owl-carousel owl-theme">
+                    <!-- Items remain the same -->
+                     <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/rameshwaram.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Rameshwaram</h2></div></div></div></div>
+                     <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/trimbakeshwar.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Trimbakeshwar</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/matrigaya.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Matrigaya</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/puri.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Puri</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/badrinath.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Badrinath</h2></div></div></div></div>
+                    
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/devaprayag.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Devprayag</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/gokarna.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Gokarna</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/pushkar.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Pushkar</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/allahabad.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Allahabad</h2></div></div></div></div>
+                    <div class="item"><div class="single-place"><div class="place-img"><img src="assets/img/Kurukshetra.jpg" alt=""></div><div class="place-cap pt-4 pb-4"><div class="place-cap-top text-center"><h2>Kurukshetra</h2></div></div></div></div>
+                </div>
+            </div>
+        </div>
+        <!-- Other Places End -->
+
+        <!-- Contact Us Section Start -->
+        <div class="support-company-area support-padding fix contact-bg-section" data-background="assets/img/service/contact-bg.jpg" data-aos="zoom-in" id="contactForm">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center text-white">
+                            <span>Get In Touch</span>
+                            <h2 >Contact Us</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="contact-form-card">
+                            <!-- Form content remains the same -->
+                            <form class="form-contact contact_form_modern" action="#" method="post" ><div class="row"><div class="col-sm-6"><div class="form-group-floating"><i class="fas fa-user"></i><input class="form-control" name="name" id="name" type="text" placeholder=" " required><label for="name">Your Name*</label></div></div><div class="col-sm-6"><div class="form-group-floating"><i class="fas fa-phone"></i><input class="form-control" name="phone" id="phone" type="tel" placeholder=" " required><label for="phone">Phone Number*</label></div></div><div class="col-12"><div class="form-group-floating"><i class="fas fa-envelope"></i><input class="form-control" name="email" id="email" type="email" placeholder=" "><label for="email">Email Address (Optional)</label></div></div><div class="col-12"><div class="form-group-floating"><i class="fas fa-comment-dots"></i><textarea class="form-control" name="message" id="message" rows="8" placeholder=" " required></textarea><label for="message">Your Message*</label></div></div></div><div class="form-group mt-4 text-center"><a href="#contactForm" class="btn hero-btn mt-4">Submit<i class="fas fa-paper-plane ml-2"></i></a></div></form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Us Section End -->
+
+    </main>
+
+    <footer>
+    <div class="footer-area footer-padding footer-bg" data-background="assets/img/service/footer_bg.jpg">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                
+                <!-- Main Footer Column (with new contact info) -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-footer-caption mb-20">
+                        <div class="logo logo2">
+                            <a href="index.html">
+                                <h2 style="font-size: 40px; color: #ffffff;">SHRAADH</h2>
+                            </a>
+                        </div>
+                        <div class="footer-pera">
+                            <p class="mt-4 mb-0">Your trusted partner for sacred journeys and ancestral rites, providing guidance and support with the utmost care and respect. Let us take care of Everything while you Focus on Honouring your Ancestors.</p>
+                        </div>
+                        <!-- New Contact Info Block -->
+                        <div class="footer-contact-info mt-4">
+                            <p><i class="fas fa-globe"></i><a href="http://shraadh.org" target="_blank" rel="noopener noreferrer">shraadh.org</a></p>
+                            <p><i class="fas fa-envelope"></i><a href="mailto:contact@shraadh.org">contact@shraadh.org</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Column -->
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Navigate</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="#contactForm">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Column -->
+                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Let us Help you</h4>
+                            <ul>
+                                <li><a href="#">Steps to perform Pind-Daan</a></li>
+                                <li><a href="#">Our Priests</a></li>
+                                <li><a href="#">Beyond Rituals</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="row">
+                <div class="col-xl-7 col-lg-7 col-md-7">
+                    <div class="footer-copy-right">
+                        <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Shraadh</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                    <div class="footer-social f-right">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+    
+    <!-- Modal HTMLs (Gaya, Varanasi, Haridwar) remain the same -->
+    <div class="modal fade" id="gayaDetailsModal" tabindex="-1" role="dialog" aria-labelledby="gayaDetailsModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="gayaDetailsModalLabel">Gaya: The Holiest Land for Pind Daan</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Gaya, an ancient city in Bihar, is a city of rituals, remembrance, release and profound healing. For countless generations, families from across India and around the world have travelled here, carrying not just offerings in their hands, but love, longing, and prayers in their hearts.
+                    </p>
+                    <p>
+                       According to the Garuda Purana, one of Hinduism’s sacred texts that guides the soul’s journey after death, it states that every soul needs help to cross into the ancestral realm (Pitrloka) and ultimately attain moksha or liberation from the cycle of rebirth. This help comes through rituals like Pind Daan, where we offer pindas (balls made of rice, flour, sesame seeds, and ghee) to nourish the soul and guide it onward. And among all the sacred sites in India, Gaya is considered the most powerful and holy for performing this ritual.
+                    </p>
+                    <p>
+                        The story of Gaya’s spiritual influence dates back to the Sthala Purana, which narrates the story of Gayasura, a powerful demon who was so pure and devoted that his very body became sacred. When the gods could no longer contain his spiritual strength, Lord Vishnu asked him to lie down so that rituals could be performed upon him, transforming him into a sacred land for ancestral offerings. Lord Vishnu is believed to have left his footprint at the Vishnupad Temple, where the main rituals are performed. It is said that offering Pind Daan at this spot carries the strength to free not just one, but generations of souls.
+                    </p>
+                    <p>
+                        In Gaya, the symbolism runs deep. The Falgu River, flowing through the city, represents the flow of karma and life. Though often dry on the surface, its underground current is said to mirror the unseen as a parallel to the presence of ancestors, the weight of memory, and the love that continues beyond death. Even in its silence, the river carries prayers. In fact, in the Mahabharata, Sita is said to have performed Pind Daan here on the riverbank, offering sand in place of rice, and her offering was accepted by her ancestors, a divine testament to the purity of intention over material form.
+                    </p>
+                    <p>
+                        Gaya is truly unique in that it is a scripture, emotion, and sacred geography into one experience. To perform Pind Daan in Gaya is to take part in something timeless, something tender. It is a gift we give our ancestors, and perhaps even more, a gift we give ourselves, the peace of knowing we’ve helped a soul find its way home.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="varanasiDetailsModal" tabindex="-1" role="dialog"
+        aria-labelledby="varanasiDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="varanasiDetailsModalLabel">Varanasi: Liberation on the Banks of the
+                        Ganges</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Kashi, Varanasi or Avimukta, the sacred city, embraces each pilgrim as they step onto the ancient ghats. Varanasi, known as the “City of Lights”, one of the oldest living cities, is referred to as Kashi when the soul finds its ultimate rest, ie Moksha or liberation. As the Agni Purana praises it as “unsurpassed,” and the Garuda Purana teaches that dying or performing last rites here grants the soul the highest spiritual destination, Varanasi stands unmatched in its power to free us from the cycle of death and rebirth.
+                    </p>
+                    <p>
+                        Pind Daan or Shraadh on the Ghats of Varanasi is not merely a ritual. When we offer pindas (rice balls), sprinkle Ganga water, and speak our prayers, this ancient city becomes a bridge: between loved ones and their next journey, between grief held in the heart and spiritual release. Revered texts such as the Skanda Purana dedicate entire chapters (the Kashi Khanda) to the city’s redemptive energy. This ancient city holds the collective devotion of millions of devotees for thousands of years, lending our prayer strength and solemnity.
+                    </p>
+                    <p>
+                        For grieving families, executing Pind Daan here is an act of deep love. The confluence of Shiva and Shakti is strongly felt in the sacred geography. The Mother Vishalakshi’s blessing in the ripples of the Ganga and Lord Shiva whispering the sacred Taraka Mantra into the ears of the dying and guiding their souls to freedom, is a gift that Pind Daan amplifies. And while the method of ritual, like bathing in the Ganga, reciting ancient mantras, and feeding Brahmins, may follow a set order, what truly counts is the intention held in every chant, tear, and silent prayer.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="haridwarDetailsModal" tabindex="-1" role="dialog"
+        aria-labelledby="haridwarDetailsModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="haridwarDetailsModalLabel">Haridwar: Gateway to Divine Release</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>
+                        Haridwar, a serene ancient city, also known as “The Gateway to God”, is perched at the foothills of the Himalayas, where the Ganga first touches the plains. Haridwar is a place of spiritual renewal and ancestral remembrance. It holds a profound sanctity recognised in the Garuda Purana, which names it as one of the three most sacred sites (Gangadwara) for ancestral rites. It is believed that a holy snana (bath) here can break the cycle of rebirth altogether.
+                    </p>
+                    <p>
+                        The significance of Pind Daan in Haridwar, especially at Kushavarta Ghat, Har Ki Pauri (Brahma Kund), Narayani Shila, Vishnu Ghat, and Gau Ghat, is intensified by the purity of the first waters of Ganga as they descend from the Himalayas. Each drop of water, each offering, is said to carry the cumulative grace of sages, gods, and pilgrimages of devotees spanning millennia.
+                    </p>
+                    <p>
+                        Haridwar’s tradition runs deeper than rituals alone. Pandas, sacred genealogists, have preserved family Bahi-Khata records going back generations, affirming a sacred lineage linking the departed to the living. In Haridwar, paying homage to ancestors becomes a journey into the heart of history, memory, and identity.
+                    </p>
+                    <p>
+                        When families perform Pind Daan here, whether during Pitru Paksha, Amavasya, or special lunar days, they stand beside their grief, offering both release and remembrance. The river’s hymn, the warmth of a priest’s guidance, and the pearly dawn light together weave an atmosphere of healing. It’s a sacred dialogue where departed souls receive nourishment, blessings flow back to the living, and karmic knots begin to untangle.
+                    </p>
+                    <p>
+                        Haridwar is not just a ritual site. It is a compassionate companion on the soul’s path, one that offers solace without judgment, liberation without haste.
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+    
+    <!-- =============================================== -->
+    <!-- 2. AOS JAVASCRIPT (ADD THIS BEFORE </body>) -->
+    <!-- =============================================== -->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 800, // Animation duration in milliseconds
+          once: true,    // Whether animation should happen only once - while scrolling down
+          offset: 100,   // Offset (in px) from the original trigger point
+      });
+    </script>
+    <!-- =============================================== -->
+
+    <script>
+        // Your existing Owl Carousel script
+        $(document).ready(function () {
+            $('.owl-carousel').owlCarousel({
+                loop: true,
+                margin: 30,
+                nav: true,
+                dots: false,
+                slideBy: 1,
+                navText: ["<i class='fas fa-chevron-left'></i>", "<i class='fas fa-chevron-right'></i>"],
+                responsive: { 0: { items: 1 }, 768: { items: 2 }, 992: { items: 4 } }
+            });
+        });
+    </script>
+</body>
+</html>

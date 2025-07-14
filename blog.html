@@ -1,0 +1,567 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Our Blog - Shraadh</title>
+    <meta name="description" content="Explore articles on rituals, sacred places, and spiritual guidance for ancestral rites.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Professional Styles -->
+    <style>
+        /* Your existing custom styles... */
+        :root {
+            --primary-color: #1A2E44;
+            --accent-color: #C0A16E;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --background-light: #f8f9fa;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-light); }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; font-weight: 600; color: var(--primary-color); }
+        .section-tittle span { color: var(--accent-color); font-weight: 600; }
+        .main-menu ul li a:hover { color: var(--accent-color) !important; }
+        .blog-hero { background-image: url('https://placehold.co/1920x450/1a2e44/ffffff?text=Our+Sacred+Journal'); background-size: cover; background-position: center; padding: 140px 0; position: relative; }
+        .blog-hero::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(26, 46, 68, 0.7); }
+        .blog-hero-content { position: relative; z-index: 1; }
+        .blog-hero-content h1 { font-size: 4.5rem; font-weight: 700; color: #fff; }
+        .blog-hero-content p { font-size: 1.25rem; color: rgba(255, 255, 255, 0.9); max-width: 600px; margin: 0 auto; }
+        .blog-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 8px 25px rgba(26, 46, 68, 0.08); transition: all 0.4s ease; margin-bottom: 30px; display: flex; flex-direction: column; height: 100%; }
+        .blog-card:hover { transform: translateY(-10px); box-shadow: 0 15px 40px rgba(26, 46, 68, 0.15); }
+        .blog-card-img { position: relative; overflow: hidden; }
+        .blog-card-img img { width: 100%; height: 250px; object-fit: cover; transition: transform 0.4s ease; }
+        .blog-card:hover .blog-card-img img { transform: scale(1.05); }
+        .blog-card-content { padding: 30px; flex-grow: 1; display: flex; flex-direction: column; }
+        .blog-card-content .blog-category { background: var(--accent-color); color: #fff; padding: 6px 15px; border-radius: 50px; font-size: 12px; font-weight: 600; display: inline-block; margin-bottom: 15px; text-transform: uppercase; letter-spacing: 0.5px; }
+        .blog-card-content h3 { font-size: 1.5rem; margin-bottom: 15px; line-height: 1.4; }
+        .blog-card-content h3 a { color: var(--primary-color); transition: color 0.3s ease; }
+        .blog-card-content h3 a:hover { color: var(--accent-color); }
+        .blog-card-content .blog-excerpt { color: var(--text-light); flex-grow: 1; margin-bottom: 20px; }
+        .blog-card-footer { padding-top: 20px; border-top: 1px solid #f0f0f0; display: flex; justify-content: space-between; align-items: center; font-size: 14px; color: #aaa; }
+        .blog-card-footer .read-more-btn { color: var(--primary-color); font-weight: 600; text-decoration: none; }
+        .blog-card-footer .read-more-btn:hover { color: var(--accent-color); }
+        .blog-sidebar .widget { background: var(--background-light); padding: 30px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e9ecef; }
+        .blog-sidebar .widget-title { font-size: 1.6rem; margin-bottom: 25px; position: relative; padding-bottom: 15px; }
+        .blog-sidebar .widget-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--accent-color); }
+        .blog-sidebar .category-list li { margin-bottom: 12px; border-bottom: 1px dashed #ddd; padding-bottom: 12px; }
+        .blog-sidebar .category-list li:last-child { border-bottom: none; }
+        .blog-sidebar .category-list a { color: var(--text-dark); transition: all 0.3s ease; font-weight: 500; text-decoration: none; }
+        
+        /* =============================================== */
+        /* NEW STYLE FOR ACTIVE FILTER LINK */
+        /* =============================================== */
+        .blog-sidebar .category-list a.active {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+        .blog-sidebar .category-list a.active:hover {
+            padding-left: 0; /* Prevent jump on hover for active link */
+        }
+        /* =============================================== */
+
+        .blog-sidebar .popular-post { display: flex; align-items: center; margin-bottom: 20px; }
+        .blog-sidebar .popular-post-img img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; margin-right: 15px; }
+        .blog-sidebar .popular-post-info h5 a { color: var(--primary-color); font-size: 1rem; line-height: 1.4; font-weight: 600; }
+        .blog-sidebar .popular-post-info span { font-size: 13px; color: #999; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        #scrollUp { display: none !important; }
+
+        /*
+** Adjust vertical spacing in the blog card footer
+*/
+.blog-card-footer {
+    padding-top: 10px; /* The default was 20px. A smaller value moves it up. */
+    /* Other styles remain the same */
+    border-top: 1px solid #f0f0f0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    color: #aaa;
+}
+/*
+** Controls the size of the logo in the header
+*/
+.logo img {
+    height: 50px; /* Adjust this value as needed */
+    width: auto;  /* Maintains the correct aspect ratio */
+}
+
+/*
+** Styling for Contact Info in Footer
+*/
+.footer-contact-info p {
+    color: #a5a5a5; /* A light grey that's easy to read on the dark background */
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+.footer-contact-info p a {
+    color: #a5a5a5;
+    transition: color 0.3s ease;
+}
+.footer-contact-info p a:hover {
+    color: #fff; /* Brightens on hover */
+    text-decoration: underline;
+}
+.footer-contact-info .fas {
+    color: var(--accent-color); /* Uses your gold accent color for the icons */
+    margin-right: 10px;
+    width: 20px; /* Ensures icons are aligned */
+}
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- ... Your header HTML ... -->
+         <div class="header-area">
+            <div class="main-header">
+                <div class="header-bottom header-sticky">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo logo2">
+                                    <a href="index.html"><img src="assets/img/logo3.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li><a href="blog.html">Blog</a></li>
+                                            <li><a href="index.html#contactForm">Contact Us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </header>
+
+    <main>
+        <!-- Blog Hero Section -->
+        <section class="blog-hero d-flex align-items-center">
+            <!-- ... Your hero content ... -->
+             <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="blog-hero-content text-center">
+                            <h1>Our Sacred Journal</h1>
+                            <p>Insights, stories, and guidance on your path of remembrance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- Blog Content Area -->
+        <section class="blog-content-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Blog Posts Column -->
+                    <div class="col-lg-8">
+                        <div class="row">
+
+                            <!-- =============================================== -->
+                            <!-- DATA-CATEGORY ATTRIBUTES ADDED TO EACH POST -->
+                            <!-- =============================================== -->
+
+                            <!-- Blog Post 1 -->
+                            <div class="col-md-6 blog-item" data-category="ritual">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/6c5ce7/ffffff?text=Pind+Daan+Guide" alt="Guide to Pind Daan"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Understanding the Ritual</span><h3><a href="single-blog.html">What Is Pind Daan? A Simple, Soulful Guide for Families</a></h3><p class="blog-excerpt">A heartfelt introduction to the ritual, its meaning, and why it matters across generations for ancestral peace.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 11, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 2 -->
+                            <div class="col-md-6 blog-item" data-category="ritual">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="blog2.html"><img src="https://placehold.co/600x400/a29bfe/ffffff?text=Soul's+Journey" alt="Soul's Journey"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Understanding the Ritual</span><h3><a href="single-blog.html">The Soul's Journey After Death: Insights from the Garuda Purana</a></h3><p class="blog-excerpt">Ancient wisdom made accessible — how Vedic texts explain what happens after death and the role of last rites.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i></span><a href="blog2.html" class="read-more-btn"> </a></div> -->
+                                </div>
+                            </div>
+                            
+                            <!-- Blog Post 3 -->
+                            <div class="col-md-6 blog-item" data-category="ritual">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/fd79a8/ffffff?text=Pitru+Paksha" alt="Pitru Paksha"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Understanding the Ritual</span><h3><a href="single-blog.html">Pitru Paksha Explained: Why It Matters and What You Can Do</a></h3><p class="blog-excerpt">An easy guide to the most sacred fortnight for ancestral offerings, its significance, and how to observe it.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 09, 2025</span><a href="blog2.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                             
+
+                            <!-- Blog Post 4 -->
+                            <div class="col-md-6 blog-item" data-category="ritual">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Women+in+Ritual" alt="Women performing rituals"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Understanding the Ritual</span><h3><a href="single-blog.html">Can Women Perform Pind Daan? A Guide to Rituals, Rights & Reverence</a></h3><p class="blog-excerpt">Exploring the evolving traditions and scriptural perspectives on whether daughters and female relatives can perform ancestral rites.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-12 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/d63031/ffffff?text=Prayagraj+%26+(Allahabad)" alt="Prayagraj(Allahabad)"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Prayagraj(Allahabad)</a></h3><p class="blog-excerpt">##############</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 07, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+
+                            
+                            <!-- Blog Post 5 -->
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/e17055/ffffff?text=Gaya" alt="Gaya"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Why Gaya Is Considered the Holiest Place for Pind Daan</a></h3><p class="blog-excerpt">A spiritual travel guide to the most revered Pitru Kshetra, its history, and the power it holds for ancestral liberation.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 08, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+                            
+                            <!-- Blog Post 6 -->
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/00b894/ffffff?text=Varanasi+%26+Haridwar" alt="Varanasi & Haridwar"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Pind Daan in Varanasi & Haridwar: Liberation on the Riverbanks</a></h3><p class="blog-excerpt">A combined post showcasing the unique spiritual depth of both holy cities for performing ancestral rites.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 06, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/00b894/ffffff?text=Varanasi+%26+Haridwar" alt="Rameshwaram"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Pind Daan in Rameshwaram</a></h3><p class="blog-excerpt">#####################################</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 06, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 7 -->
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/0984e3/ffffff?text=Hidden+Gems" alt="Hidden Gems"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Sacred Yet Unseen: Lesser-Known Pitru Kshetras in India</a></h3><p class="blog-excerpt">Introduce hidden gems like Siddhpur, Trimbakeshwar, and Rameswaram, each with its own unique spiritual power.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 05, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+                            
+                            <!-- Blog Post 8 (NRI Focused) -->
+                            <div class="col-md-12 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/d63031/ffffff?text=NRIs+%26+Tradition" alt="NRIs & Tradition"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Ancestral Rites for NRIs: Keeping Traditions Alive Across Oceans</a></h3><p class="blog-excerpt">A deeply personal piece for the global Indian audience longing to reconnect with their roots. We explore how to maintain these sacred duties from afar and plan a meaningful journey home.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 07, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 9 -->
+                            <div class="col-md-6 blog-item" data-category="services">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ffeaa7/000000?text=Our+Process" alt="Our Process"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Our Services</span><h3><a href="single-blog.html">Step-by-Step Guide to Performing Pind Daan with Us</a></h3><p class="blog-excerpt">A transparent walkthrough that shows our care, planning, and attention to sacred details from start to finish.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 04, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 10 -->
+                            <div class="col-md-6 blog-item" data-category="services">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/55efc4/000000?text=Our+Priests" alt="Our Priests"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Our Services</span><h3><a href="single-blog.html">Meet Our Priests: The Heart Behind Every Sacred Ritual</a></h3><p class="blog-excerpt">A behind-the-scenes look at the compassionate, knowledgeable guides who lead our ceremonies with devotion.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 03, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Kurukshetra" alt="Kurukshetra"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Kurukshetra</a></h3><p class="blog-excerpt">&&&&&&&&&&&&&&&&&&&&&&&</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Badrinath" alt="Badrinath"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Badrinath</a></h3><p class="blog-excerpt">&&&&&&&&&&&&&&&&&&&&&&&</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <!-- Blog Post 11 -->
+                            <div class="col-md-12 blog-item" data-category="services">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/81ecec/000000?text=Healing" alt="Healing"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Our Services</span><h3><a href="single-blog.html">Beyond Rituals: Healing, Reflection & Spiritual Wellness with Us</a></h3><p class="blog-excerpt">Positioning our service not just as a ritual facilitator, but as a companion in your emotional and spiritual healing journey.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 02, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Devprayag" alt="Devprayag"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Devprayag</a></h3><p class="blog-excerpt">&&&&&&&&&&&&&&&&&&&&&&&</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Gokarna" alt="Gokarna"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Gokarna</a></h3><p class="blog-excerpt">&&&&&&&&&&&&&&&&&&&&&&&</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-12 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/81ecec/000000?text=Trimbakeshwar" alt="Trimbakeshwar"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Trimbakeshwar</a></h3><p class="blog-excerpt">Positioning our service not just as a ritual facilitator, but as a companion in your emotional and spiritual healing journey.</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 02, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Pushkar" alt="Pushkar"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Pushkar</a></h3><p class="blog-excerpt">&&&&&&&&&&&&&&&&&&&&&&&</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 blog-item" data-category="sacred">
+                                <div class="blog-card">
+                                    <div class="blog-card-img"><a href="single-blog.html"><img src="https://placehold.co/600x400/ff6b81/ffffff?text=Puri" alt="Puri"></a></div>
+                                    <div class="blog-card-content"><span class="blog-category">Sacred Places</span><h3><a href="single-blog.html">Puri</a></h3><p class="blog-excerpt">&&&&&&&&&&&&&&&&&&&&&&&</p></div>
+                                    <!-- <div class="blog-card-footer"><span><i class="far fa-calendar-alt mr-2"></i>July 12, 2025</span><a href="single-blog.html" class="read-more-btn">Read More <i class="fas fa-arrow-right ml-1"></i></a></div> -->
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar">
+                            <div class="widget">
+                                <h4 class="widget-title">Categories</h4>
+                                <!-- =============================================== -->
+                                <!-- UPDATED CATEGORY LIST WITH DATA-FILTER ATTRIBUTES -->
+                                <!-- =============================================== -->
+                                <ul class="list-unstyled category-list">
+                                    <li><a href="#" class="active" data-filter="all">All Posts <span class="float-right">(20)</span></a></li>
+                                    <li><a href="#" data-filter="ritual">Understanding the Ritual <span class="float-right">(10)</span></a></li>
+                                    
+                                    <li><a href="#" data-filter="sacred">Sacred Places <span class="float-right">(6)</span></a></li>
+                                    <li><a href="#" data-filter="services">Our Services <span class="float-right">(4)</span></a></li>
+                                </ul>
+                            </div>
+
+                            <div class="widget">
+                                <!-- ... Your popular posts widget ... -->
+                                 <h4 class="widget-title">Popular Posts</h4>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img
+                                                src="https://placehold.co/150x150/6c5ce7/ffffff?text=Guide" alt=""></a>
+                                    </div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">What Is Pind Daan? A Simple, Soulful Guide</a></h5>
+                                        <span>July 11, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img
+                                                src="https://placehold.co/150x150/d63031/ffffff?text=NRIs" alt=""></a>
+                                    </div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">Ancestral Rites for NRIs: Keeping Traditions Alive</a></h5>
+                                        <span>July 07, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img
+                                                src="https://placehold.co/150x150/e17055/ffffff?text=Gaya" alt=""></a>
+                                    </div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">Why Gaya Is Considered the Holiest Place for Pind Daan</a></h5>
+                                        <span>July 08, 2025</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+    <div class="footer-area footer-padding footer-bg" data-background="assets/img/service/footer_bg.jpg">
+        <div class="container">
+            <div class="row d-flex justify-content-between">
+                
+                <!-- Main Footer Column (with new contact info) -->
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                    <div class="single-footer-caption mb-50">
+                        <div class="logo logo2">
+                            <a href="index.html"><img src="assets/img/logo3.jpg" alt=""></a>
+                        </div>
+                        <div class="footer-pera">
+                            <p class="mt-4">Your trusted partner for sacred journeys and ancestral rites, providing guidance and support with the utmost care and respect.</p>
+                        </div>
+                        <!-- New Contact Info Block -->
+                        <div class="footer-contact-info mt-4">
+                            <p><i class="fas fa-globe"></i><a href="http://shraadh.org" target="_blank" rel="noopener noreferrer">shraadh.org</a></p>
+                            <p><i class="fas fa-envelope"></i><a href="mailto:contact@shraadh.org">contact@shraadh.org</a></p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation Column -->
+                <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Navigate</h4>
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="blog.html">Blog</a></li>
+                                <li><a href="#contactForm">Contact Us</a></li>
+                                <li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Services Column -->
+                <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6">
+                    <div class="single-footer-caption mb-50">
+                        <div class="footer-tittle">
+                            <h4>Our Services</h4>
+                            <ul>
+                                <li><a href="#">Steps to perform Pind-Daan</a></li>
+                                <li><a href="#">Our Priests</a></li>
+                                <li><a href="#">Beyond Rituals</a></li>
+                                <!-- <li><a href="#">Other Sacred Kshetras</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Footer Bottom -->
+            <div class="row pt-padding">
+                <div class="col-xl-7 col-lg-7 col-md-7">
+                    <div class="footer-copy-right">
+                        <p>Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | Shraadh</p>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-5">
+                    <div class="footer-social f-right">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+    
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/owl.carousel.min.js"></script>
+    <script src="./assets/js/slick.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+
+    <script src="./assets/js/vendor/modernizr-3.5.0.min.js"></script>
+    
+    <script src="./assets/js/wow.min.js"></script>
+    <script src="./assets/js/animated.headline.js"></script>
+    <script src="./assets/js/jquery.magnific-popup.js"></script>
+    <script src="./assets/js/jquery.scrollUp.min.js"></script>
+    <script src="./assets/js/jquery.nice-select.min.js"></script>
+    <script src="./assets/js/jquery.sticky.js"></script>
+    
+    <!-- =============================================== -->
+    <!-- NEW JAVASCRIPT FOR BLOG FILTERING -->
+    <!-- =============================================== -->
+    <script>
+        $(document).ready(function() {
+            // Blog category filter functionality
+            $('.category-list a').on('click', function(e) {
+                e.preventDefault(); // Stop the link from navigating
+
+                // Visually mark the clicked link as active
+                $('.category-list a').removeClass('active');
+                $(this).addClass('active');
+
+                // Get the category to filter by from the data-filter attribute
+                var filterValue = $(this).data('filter');
+
+                // If 'all' is clicked, show all blog items
+                if (filterValue === 'all') {
+                    $('.blog-item').fadeIn('slow');
+                } else {
+                    // Otherwise, hide all items first
+                    $('.blog-item').hide();
+                    // Then, fade in only the items that match the filter
+                    $('.blog-item[data-category="' + filterValue + '"]').fadeIn('slow');
+                }
+            });
+        });
+    </script>
+    <!-- =============================================== -->
+
+</body>
+</html>
