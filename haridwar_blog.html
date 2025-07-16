@@ -1,0 +1,237 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Haridwar: Where the River Slows Down for the Soul - Shraadh Blog</title>
+    <meta name="description" content="An in-depth look at why Haridwar is a powerful place for Pind Daan and ancestral rites.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/animate.min.css">
+    <link rel="stylesheet" href="assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/themify-icons.css">
+    <link rel="stylesheet" href="assets/css/slick.css">
+    <link rel="stylesheet" href="assets/css/nice-select.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Professional Styles -->
+    <style>
+        /* Re-using the professional styles from the main site */
+        :root {
+            --primary-color: #1A2E44;
+            --accent-color: #C0A16E;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --background-light: #f8f9fa;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-light); line-height: 1.7; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; font-weight: 600; color: var(--primary-color); }
+        .main-menu ul li a:hover { color: var(--accent-color) !important; }
+        
+        /* Single Post Specific Styles */
+        .post-hero {
+            height: 60vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .post-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(26, 46, 68, 0.8), rgba(26, 46, 68, 0.4));
+        }
+        .post-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+        }
+        .post-hero-content .post-category {
+            background: var(--accent-color);
+            color: #fff;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+        }
+        .post-hero-content h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .post-hero-content .post-meta {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        .post-content h2 {
+            font-size: 2rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+        }
+        .post-content h2 .fas {
+            color: var(--accent-color);
+            margin-right: 15px;
+            font-size: 1.5rem;
+        }
+        .post-content img {
+            border-radius: 12px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Sidebar Styles */
+        .blog-sidebar .widget { background: var(--background-light); padding: 30px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e9ecef; }
+        .blog-sidebar .widget-title { font-size: 1.6rem; margin-bottom: 25px; position: relative; padding-bottom: 15px; }
+        .blog-sidebar .widget-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--accent-color); }
+        .blog-sidebar .category-list li { margin-bottom: 12px; border-bottom: 1px dashed #ddd; padding-bottom: 12px; }
+        .blog-sidebar .category-list li:last-child { border-bottom: none; }
+        .blog-sidebar .category-list a { color: var(--text-dark); transition: all 0.3s ease; font-weight: 500; }
+        .blog-sidebar .category-list a:hover { color: var(--accent-color); padding-left: 5px; }
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        #scrollUp { display: none !important; }
+        .blog-sidebar .popular-post { display: flex; align-items: center; margin-bottom: 20px; }
+        .blog-sidebar .popular-post-img img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; margin-right: 15px; }
+        .blog-sidebar .popular-post-info h5 a { color: var(--primary-color); font-size: 1rem; line-height: 1.4; font-weight: 600; }
+        .blog-sidebar .popular-post-info span { font-size: 13px; color: #999; }
+        /* Back to Blog Button Style */
+        .back-to-blog-link { display: inline-block; margin-bottom: 1.5rem; color: var(--text-light); font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
+        .back-to-blog-link:hover { color: var(--accent-color); transform: translateX(-5px); }
+        .back-to-blog-link .fas { margin-right: 8px; }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <!-- Paste your standard header HTML here -->
+    </header>
+
+    <main>
+        <!-- Post Hero Section -->
+        <section class="post-hero" style="background-image: url('https://placehold.co/1920x800/1abc9c/ffffff?text=Haridwar');">
+            <div class="post-hero-content">
+                <span class="post-category">Sacred Places</span>
+                <h1>Haridwar: Where the River Slows for the Soul</h1>
+                <div class="post-meta">
+                    <span>By Shraadh Team</span> | <span>July 29, 2025</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Post Content Area -->
+        <section class="blog-content-area section-padding">
+            <div class="container">
+                <div class="row">
+                    <!-- Main Post Content Column -->
+                    <div class="col-lg-8">
+                        <a href="blog.html" class="back-to-blog-link"><i class="fas fa-arrow-left"></i> Back to All Posts</a>
+                        <article class="post-content">
+                            <p class="lead">Haridwar, is an ancient city nestled at the foothills of the Himalayas. The Ganga first touches the plains here, and in that very moment, something shifts in the air, in the flow, and in the hearts of those who come seeking peace for their loved ones. For centuries, Haridwar has been a sacred site for Shraadh and Pind Daan, a place where memory finds water and water finds freedom.</p>
+                            
+                            <h2><i class="fas-om"></i>Why Haridwar Is Spiritually Powerful</h2>
+                            <p>The name Haridwar means “Gateway to the Divine.” It is mentioned in the Skanda Purana, Vamana Purana, and other sacred texts as a place where performing rituals grants spiritual merit. The Garuda Purana, which outlines the soul’s journey after death, refers to the Ganga in Haridwar as a sacred purifier, capable of dissolving karmic attachments.</p>
+                            <p>This is where King Bhagiratha is said to have brought the river down to earth, so that his ancestors could be liberated. That intention of doing something for those who came before you lives on in every ritual performed at Har Ki Pauri, the most revered ghat in the city.</p>
+                            <p>According to the Sthala Purana, Haridwar is one of the few places where the energies of both Lord Vishnu and Lord Shiva are equally revered and present. It is believed that Vishnu’s footprint rests at Har ki Pauri, while Shiva’s presence is felt at the nearby Daksha Mahadev Temple, symbolising the union of preservation and transformation in one sacred space.</p>
+                            
+                            <img src="https://placehold.co/800x450/2ecc71/ffffff?text=Rituals+at+Har+Ki+Pauri" alt="Rituals at the ghats of Haridwar" class="img-fluid">
+
+                            <h2><i class="fas fa-praying-hands"></i>How the Pind Daan Is Performed</h2>
+                            <p>In Haridwar, Pind Daan is performed at Har ki Pauri or other ghats along the river. A local priest helps prepare pindas, small offerings made of rice flour, black sesame, and ghee. The ritual begins with a sankalp (intention), tarpan (water offering), then finally the offering of pindas.</p>
+                            <p>The Ganga flows steadily, receiving everything through the words, the silence, the tears. The pindas are placed in the water with prayers that the soul be nourished, remembered, and released.</p>
+                            <p>There is no rush. The priests here understand grief. They give you time to breathe, to cry, or simply to sit with what is.</p>
+
+                            <h2><i class="fas-cross"></i>The Divine Presence: Vishnu and Shiva</h2>
+                            <p>Haridwar is home to both Hari (Vishnu) and Har (Shiva), a rare spiritual balance. While the Ganga represents divine flow and motherly grace, the Mansa Devi and Chandi Devi temples reflect the Shakti, the inner strength required to process the grief.</p>
+                            <p>At Har Ki Pauri, a footprint of Lord Vishnu is said to be embedded in stone, a quiet reminder that the divine has touched this Earth and continues to bless those who come in faith. The Daksha Mahadev Temple, associated with Shiva’s fierce compassion, is also nearby. Many pilgrims visit both shrines after performing Pind Daan, as a way to balance letting go with divine support.</p>
+                            
+                            <h2><i class="fas-route"></i>Continuing the Journey from Haridwar</h2>
+                            <p>From Haridwar to Rishikesh is only a short drive away. The river narrows and the forests thicken, offering a place for reflection and prayer. The Triveni Ghat, known for its evening aarti, conveys a sense of closure.</p>
+                            <p>Further, one can head to Devprayag, where the Alaknanda and Bhagirathi rivers meet to form the Ganga. Performing a final prayer here is seen as completing the journey from sorrow to surrender, attaining inner peace.</p>
+                            <p>One may also proceed to Badrinath, especially if the departed soul had a strong Vaishnavite devotion. In each of these places, the energy of Haridwar carries forward, like the river itself. In Haridwar, the stillness pulls one inward to experience peace. The Ganga, with all her love, takes you from sorrow to stillness.</p>
+
+                        </article>
+                    </div>
+
+                    <!-- Sidebar Column -->
+                    <div class="col-lg-4">
+                        <div class="blog-sidebar">
+                            <div class="widget">
+                                <h4 class="widget-title">Categories</h4>
+                                <ul class="list-unstyled category-list">
+                                    <li><a href="ritual.html">Understanding the Ritual <span class="float-right">(6)</span></a></li>
+                                    <li><a href="sacred.html">Sacred Places <span class="float-right">(13)</span></a></li>
+                                    <li><a href="services.html">Our Services <span class="float-right">(2)</span></a></li>
+                                </ul>
+                            </div>
+                            <div class="widget">
+                                <h4 class="widget-title">Popular Posts</h4>
+                                <!-- Popular posts content here -->
+                                  <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img src="https://placehold.co/150x150/6c5ce7/ffffff?text=Guide" alt=""></a></div>
+                                    <div class="popular-post-info"><h5><a href="#">What Is Pind Daan? A Simple, Soulful Guide</a></h5><span>July 11, 2025</span></div>
+                                </div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img src="https://placehold.co/150x150/d63031/ffffff?text=NRIs" alt=""></a></div>
+                                    <div class="popular-post-info"><h5><a href="#">Ancestral Rites for NRIs: Keeping Traditions Alive</a></h5><span>July 07, 2025</span></div>
+                                </div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img src="https://placehold.co/150x150/e17055/ffffff?text=Gaya" alt=""></a></div>
+                                    <div class="popular-post-info"><h5><a href="#">Why Gaya Is Considered the Holiest Place for Pind Daan</a></h5><span>July 08, 2025</span></div>
+                                </div>
+
+
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <!-- Paste your standard footer HTML here -->
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
