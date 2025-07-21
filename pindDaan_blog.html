@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>What Is Pind Daan? A Guide for Families - Shraadh Blog</title>
-    <meta name="description" content="A heartfelt introduction to the Pind Daan ritual and why it matters across generations.">
+    <meta name="description"
+        content="A heartfelt introduction to the Pind Daan ritual and why it matters across generations.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
 
     <!-- CSS here -->
     <link rel="stylesheet" href="assets/css/bootstrap.min.css">
@@ -34,10 +37,28 @@
             --text-light: #576574;
             --background-light: #f8f9fa;
         }
-        body { font-family: 'Inter', sans-serif; color: var(--text-light); line-height: 1.7; }
-        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; font-weight: 600; color: var(--primary-color); }
-        .main-menu ul li a:hover { color: var(--accent-color) !important; }
-        
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .main-menu ul li a:hover {
+            color: var(--accent-color) !important;
+        }
+
         /* Single Post Specific Styles */
         .post-hero {
             height: 60vh;
@@ -48,19 +69,24 @@
             align-items: center;
             justify-content: center;
         }
+
         .post-hero::before {
             content: '';
             position: absolute;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: linear-gradient(to top, rgba(26, 46, 68, 0.8), rgba(26, 46, 68, 0.4));
         }
+
         .post-hero-content {
             position: relative;
             z-index: 1;
             text-align: center;
             color: #fff;
         }
+
         .post-hero-content .post-category {
             background: var(--accent-color);
             color: #fff;
@@ -72,12 +98,14 @@
             margin-bottom: 20px;
             text-transform: uppercase;
         }
+
         .post-hero-content h1 {
             font-size: 3.5rem;
             color: #fff;
             margin-bottom: 15px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
+
         .post-hero-content .post-meta {
             font-size: 1rem;
             color: rgba(255, 255, 255, 0.9);
@@ -87,6 +115,7 @@
             font-size: 1.1rem;
             line-height: 1.8;
         }
+
         .post-content h2 {
             font-size: 2rem;
             margin-top: 2.5rem;
@@ -94,52 +123,252 @@
             display: flex;
             align-items: center;
         }
+
         .post-content h2 .fas {
             color: var(--accent-color);
             margin-right: 15px;
             font-size: 1.5rem;
         }
+
         .post-content img {
             border-radius: 12px;
             margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
-        
+
         /* Sidebar Styles (copied from blog.html for consistency) */
-        .blog-sidebar .widget { background: var(--background-light); padding: 30px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #e9ecef; }
-        .blog-sidebar .widget-title { font-size: 1.6rem; margin-bottom: 25px; position: relative; padding-bottom: 15px; }
-        .blog-sidebar .widget-title::after { content: ''; position: absolute; bottom: 0; left: 0; width: 50px; height: 3px; background: var(--accent-color); }
-        .blog-sidebar .category-list li { margin-bottom: 12px; border-bottom: 1px dashed #ddd; padding-bottom: 12px; }
-        .blog-sidebar .category-list li:last-child { border-bottom: none; }
-        .blog-sidebar .category-list a { color: var(--text-dark); transition: all 0.3s ease; font-weight: 500; }
-        .blog-sidebar .category-list a:hover { color: var(--accent-color); padding-left: 5px; }
-        .blog-sidebar .popular-post { display: flex; align-items: center; margin-bottom: 20px; }
-        .blog-sidebar .popular-post-img img { width: 70px; height: 70px; object-fit: cover; border-radius: 8px; margin-right: 15px; }
-        .blog-sidebar .popular-post-info h5 a { color: var(--primary-color); font-size: 1rem; line-height: 1.4; font-weight: 600; }
-        .blog-sidebar .popular-post-info span { font-size: 13px; color: #999; }
-        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease; }
-        .whatsapp-float:hover { transform: scale(1.1); }
-        #scrollUp { display: none !important; }
+        .blog-sidebar .widget {
+            background: var(--background-light);
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            border: 1px solid #e9ecef;
+        }
+
+        .blog-sidebar .widget-title {
+            font-size: 1.6rem;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .blog-sidebar .widget-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+        }
+
+        .blog-sidebar .category-list li {
+            margin-bottom: 12px;
+            border-bottom: 1px dashed #ddd;
+            padding-bottom: 12px;
+        }
+
+        .blog-sidebar .category-list li:last-child {
+            border-bottom: none;
+        }
+
+        .blog-sidebar .category-list a {
+            color: var(--text-dark);
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .blog-sidebar .category-list a:hover {
+            color: var(--accent-color);
+            padding-left: 5px;
+        }
+
+        .blog-sidebar .popular-post {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-sidebar .popular-post-img img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .blog-sidebar .popular-post-info h5 a {
+            color: var(--primary-color);
+            font-size: 1rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .blog-sidebar .popular-post-info span {
+            font-size: 13px;
+            color: #999;
+        }
+
+        .whatsapp-float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25D366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.3s ease;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        #scrollUp {
+            display: none !important;
+        }
+
         /*
 ** Styling for the "Back to Blog" Button
 */
-.back-to-blog-link {
-    display: inline-block;
-    margin-bottom: 1.5rem; /* Adds space below the button */
+        .back-to-blog-link {
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            /* Adds space below the button */
+            color: var(--text-light);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-to-blog-link:hover {
+            color: var(--accent-color);
+            transform: translateX(-5px);
+            /* A subtle movement effect on hover */
+        }
+
+        .back-to-blog-link .fas {
+            margin-right: 8px;
+            /* Space between the icon and the text */
+        }
+
+        .pitrus-list {
+            margin: 2.5rem 0;
+        }
+        .pitrus-list h4 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+        .pitrus-list ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .pitrus-list ul li {
+            position: relative;
+            padding-left: 30px; /* Make space for the icon */
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            color: var(--text-dark);
+        }
+        .pitrus-list ul li::before {
+            content: '\f14a'; /* Unicode for Font Awesome 'check-square' */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--accent-color);
+        }
+        /*
+** Beautiful styling for Sanskrit verses (Corrected)
+*/
+.post-content blockquote.sanskrit-verse {
+    background-color: #f7f5f1; /* A soft, parchment-like color */
+    border-left: 4px solid var(--accent-color);
+    padding: 25px 30px;
+    margin: 2.5rem 0;
+    font-style: normal;
+}
+
+.sanskrit-verse p {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem; /* Larger font size for the verse */
+    line-height: 2;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.sanskrit-verse small {
+    font-family: 'Inter', sans-serif;
+    font-style: italic;
+    font-size: 1rem;
     color: var(--text-light);
-    font-weight: 600;
-    text-decoration: none;
-    transition: all 0.3s ease;
 }
 
-.back-to-blog-link:hover {
-    color: var(--accent-color);
-    transform: translateX(-5px); /* A subtle movement effect on hover */
-}
 
-.back-to-blog-link .fas {
-    margin-right: 8px; /* Space between the icon and the text */
-}
+
+
+
+.cta-section-v2 {
+            background-color: var(--background-light);
+            border-top: 4px solid var(--accent-color);
+            padding: 40px;
+            border-radius: 8px;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .cta-section-v2 .cta-icon {
+            font-size: 6rem;
+            color: var(--accent-color);
+            opacity: 0.25;
+            text-align: center;
+        }
+        .cta-section-v2 h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        .cta-section-v2 p {
+            margin-bottom: 25px;
+            color: var(--text-light);
+        }
+        .cta-section-v2 ul {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+        }
+        .cta-section-v2 ul li {
+            margin-bottom: 10px;
+        }
+        .cta-section-v2 ul li a {
+            display: inline-block;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        .cta-section-v2 ul li a:hover {
+            color: var(--accent-color);
+            transform: translateX(5px);
+        }
+        .cta-section-v2 ul li a .fab, .cta-section-v2 ul li a .fas {
+            margin-right: 12px;
+            font-size: 1.2rem;
+            width: 20px;
+            color: var(--accent-color);
+        }
     </style>
 </head>
 
@@ -151,7 +380,8 @@
 
     <main>
         <!-- Post Hero Section -->
-        <section class="post-hero" style="background-image: url('https://placehold.co/1920x800/6c5ce7/ffffff?text=A+Sacred+Offering');">
+        <section class="post-hero"
+            style="background-image: url('https://placehold.co/1920x800/6c5ce7/ffffff?text=A+Sacred+Offering');">
             <div class="post-hero-content">
                 <span class="post-category">Understanding the Ritual</span>
                 <h1>What Is Pind Daan?</h1>
@@ -168,32 +398,117 @@
                     <!-- Main Post Content Column -->
                     <div class="col-lg-8">
                         <a href="blog.html" class="back-to-blog-link">
-                    <i class="fas fa-arrow-left"></i> Back to All Posts
-                </a>
+                            <i class="fas fa-arrow-left"></i> Back to All Posts
+                        </a>
                         <article class="post-content">
-                            <p class="lead">There are moments when love takes the form of prayer. Quiet, sacred, and deeply personal. Pind Daan is one such act of love. It is a ritual of remembering, offering, and guiding, not through grand gestures, but through simple, heartfelt actions filled with intention and reverence.</p>
-                            <p>Rooted in the Vedas and described in depth in the Garuda Purana, Pind Daan is one of the most ancient and meaningful rites in Hindu tradition. It is performed to honour one’s ancestors and bring peace to their souls. In this act, the living reach across the threshold of time to offer care to those who have passed on.</p>
-                            
-                            <img src="https://placehold.co/800x450/a29bfe/ffffff?text=Symbolic+Offerings" alt="Symbolic offerings for a ritual" class="img-fluid">
+                            <p class="lead">There are moments when love takes the form of prayer. Quiet, sacred, and
+                                deeply personal. Pind Daan is one such act of love. It is a ritual of remembering,
+                                offering, and guiding, not through grand gestures, but through simple, heartfelt actions
+                                filled with intention and reverence.</p>
+                            <p>Rooted in the Vedas and described in depth in the Garuda Purana, Pind Daan is one of the
+                                most ancient and meaningful rites in Hindu tradition. It is performed to honour one’s
+                                ancestors and bring peace to their souls. In this act, the living reach across the
+                                threshold of time to offer care to those who have passed on.</p>
+                            <p>Though the ritual itself appears simple, its depth lies in what it symbolises. Pindas, round offerings made from rice or flour, black sesame seeds, and ghee, are placed with prayer and humility. According to the Vedas and Shastras, the preparation of Pindas varies from each community and sect. Brahmins, Vaishnavites and Kshatriyas prepare with rice while all the other sects in the Sanathan fold prepare pindas with Rice flour. These small offerings are believed to symbolically feed and support the soul in its journey beyond this world, in the afterlife.</p>
+
+                            <img src="assets/img/symbolic offering.jpg" alt="Symbolic offerings for a ritual"
+                                class="img-fluid">
 
                             <h2>What Does Pind Daan Do?</h2>
-                            <p>According to the Garuda Purana, after death, the soul does not immediately attain rest or liberation. It enters a transitional phase, where it awaits the prayers and offerings of its family to move onward. Without these rituals, the soul may linger, caught between worlds, carrying unfinished emotions or attachments.</p>
-                            <p>Pind Daan is believed to help the soul detach gently from the physical world and continue its path toward Pitrloka, the ancestral realm, or ultimately toward moksha, the final release from the cycle of rebirth. The ritual is not only an act of remembrance. It is an act of spiritual assistance, performed with compassion and love.</p>
+                            <p>According to the Garuda Purana, after death, the soul does not immediately attain rest or
+                                liberation. It enters a transitional phase, where it awaits the prayers and offerings of
+                                its family to move onward. Without these rituals, the soul may linger, caught between
+                                worlds, carrying unfinished emotions or attachments.</p>
+                            <p>Pind Daan is believed to help the soul detach gently from the physical world and continue
+                                its path toward <b>Pitrloka</b>, the ancestral realm, or ultimately toward <b>moksha</b>, the final
+                                release from the cycle of rebirth. The ritual is not only an act of remembrance. It is
+                                an act of spiritual assistance, performed with compassion and love.</p>
 
                             <h2>Who Is It Performed For?</h2>
-                            <p>While Shraadh is the ceremony and Pind Daan is the ritual usually offered to one's immediate ancestors, ie, parents, grandparents, siblings, or children, it can also be performed for those whose names may be forgotten or unknown. In many families, people offer pindas for entire generations, saying, “Let no soul be left behind.”</p>
-                            <p>The act is especially significant for those who may have passed away suddenly or without receiving proper rites. For such souls, it is believed that Pind Daan brings the peace and closure that may have been missed at the time of death.</p>
+                            <p>While Shraadh is the ceremony and Pind Daan is the ritual usually offered to one's
+                                immediate ancestors, ie, parents, grandparents, siblings, or children, it can also be
+                                performed for those whose names may be forgotten or unknown. In many families, people
+                                offer pindas for entire generations, saying, “Let no soul be left behind.”</p>
+                            <p>The act is especially significant for those who may have passed away suddenly or without
+                                receiving proper rites. For such souls, it is believed that Pind Daan brings the peace
+                                and closure that may have been missed at the time of death.</p>
+                            <p>While some families perform Pind Daan annually during <b>Pitru Paksha</b>, others do it at important life moments, such as after the death of a parent, or before a marriage or birth, as a way of seeking blessings and honouring the lineage that made the present possible. It is also performed on important thithis like Mahalaya Paksha, Ayana, and in Theertha Kshetras. It is also prescribed to perform the Shraadhs 96 times in a year, also known as Shannavati Shraadha.</p>
+                            <p><b>Sanatan Dharma offers a deeper understanding</b> of who we call “Pitrs”, ie our ancestors or father figures. It’s not just about blood ties. It's about <b>everyone who shaped our lives</b>, sustained us, protected us, or helped us grow.</p>
+                            <!-- <img src="https://placehold.co/800x450/00b894/ffffff?text=Timeless+Tradition"
+                                alt="A modern family honoring tradition" class="img-fluid"> -->
                             
-                            <img src="https://placehold.co/800x450/00b894/ffffff?text=Timeless+Tradition" alt="A modern family honoring tradition" class="img-fluid">
+                                
 
+                            <div class="pitrus-list">
+                                <h4>The following five are remembered as Pitrus:</h4>
+                                <ul>
+                                    <li><strong>Janitā</strong> – The one who gives birth</li>
+                                    <li><strong>Upanetā</strong> – The one who initiates into sacred learning</li>
+                                    <li><strong>Vidyā-Prayacchitā</strong> – The one who imparts knowledge</li>
+                                    <li><strong>Annadātā</strong> – The one who provides food</li>
+                                    <li><strong>Bhayatrātā</strong> – The one who protects from fear or harm</li>
+                                </ul>
+                            </div>
+                                <video autoplay muted loop playsinline class="img-fluid">
+                                <!-- Make sure your video file is in this location -->
+                                <source src="assets/img/Timeless tradition.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
                             <h2>Why Does It Matter Today?</h2>
-                            <p>In a world that moves on too quickly, our scriptures guide us to slow down, and rituals like Pind Daan invite us to reflect on ourselves as to where we come from and who we owe our existence to. They also remind us that healing is for everyone, the living and the dead. Even without a complete understanding of the scriptures, the entire ritualistic act itself connects the grief within with the physicality of the offering outside. It extends the love beyond death, assuring the soul that it is not forgotten and that it still matters to its loved ones.</p>
-                            <p>Many Sanatanis, even those who have moved outside the country, still choose to perform Pind Daan at the three main sacred Kshetras of Gaya, Varanasi and Haridwar, guided by faith and prayer.</p>
-                            
-                            <h2>A Spiritual Journey</h2>
-                            <p>Spirituality in Sanatan Dharma beautifully highlights the unity of mind, body, and soul, encouraging us to reach for higher goals or to realise God and our true purpose. For families, especially during times of loss, performing Pind Daan offers a meaningful way to find direction and a sense of accomplishment and comfort, as they fulfil a sacred duty to the Soul, Nature, and God.</p>
-                            <p>It is believed that performing Pind Daan also clears unseen obstacles in the lives of the living. It brings blessings, steadiness, and peace into the home. In fulfilling our pitru rina, the debt to our ancestors, we free not just them, but ourselves as well.</p>
+                            <p>In a world that moves on too quickly, our scriptures guide us to slow down, and rituals
+                                like Pind Daan invite us to reflect on ourselves as to where we come from and who we owe
+                                our existence to. They also remind us that healing is for everyone, the living and the
+                                dead. Even without a complete understanding of the scriptures, the entire ritualistic
+                                act itself connects the grief within with the physicality of the offering outside. It
+                                extends the love beyond death, assuring the soul that it is not forgotten and that it
+                                still matters to its loved ones.</p>
+                            <p>Many Sanatanis, even those who have moved outside the country, still choose to perform
+                                Pind Daan at the three main sacred Kshetras of Gaya, Varanasi and Haridwar, guided by
+                                faith and prayer.</p>
 
+                            <h2>Where is Pind Daan performed?</h2>
+                            <p>Pind Daan is not performed just anywhere. It is offered at places where the energy of liberation is naturally strong, often by the banks of ancient rivers or within sacred cities that are gateways between realms. The seven most spiritually potent rivers, known as the Jeeva Nadis, hold special significance in this journey of the soul.</p>
+                            <blockquote class="sanskrit-verse">
+                                <p>
+                                    गङ्गा च यमुना चैव गोदावरी सरस्वती।<br>
+                                    नर्मदा सिन्धु कावेरि जलास्मिन् सन्निधिं कुरु॥
+                                </p>
+                                <small>“O Ganga, Yamuna, Godavari, Saraswati, Narmada, Sindhu, and Kaveri — may your divine presence be in this water.” (from Tarpana Mantras)</small>
+                            </blockquote>
+                            <p>In Sanathan Dharma, these rivers are Jeeva nadis or rivers with life. They are divine and carry lifeforce within them, can cleanse karmic debts, uplift and carry the soul to higher realms. Performing Pind Daan along these Jeeva Nadis, in Gaya, Varanasi, Haridwar, Prayagraj, Badrinath, Omkareshwar, and Rameshwaram, ensures that the offering reaches its destination, both physically and spiritually. These rivers touch Lord Vishnu’s lotus feet and end up in the sea.</p>
+                            <p>These sacred sites are spiritual circuits, where the living and the departed can connect through the flow of Theertha Jala, or holy water. The pindas offered here are believed to be received directly by the ancestors, granting them peace, movement, or even liberation.</p>
+
+                            <h2>A Spiritual Journey</h2>
+                            <p>Spirituality in Sanatan Dharma beautifully highlights the unity of mind, body, and soul,
+                                encouraging us to reach for higher goals or to realise God and our true purpose. For
+                                families, especially during times of loss, performing Pind Daan offers a meaningful way
+                                to find direction and a sense of accomplishment and comfort, as they fulfil a sacred
+                                duty to the Soul, Nature, and God.</p>
+                            <p>It is believed that performing Pind Daan also clears unseen obstacles in the lives of the
+                                living. It brings blessings, steadiness, and peace into the home. In fulfilling our
+                                pitru rina, the debt to our ancestors, we free not just them, but ourselves as well.</p>
+
+
+                                <div class="cta-section-v2">
+                                <div class="row align-items-center">
+                                    <div class="col-md-8">
+                                        <div class="cta-text">
+                                            <h3>Want help planning a Pind Daan?</h3>
+                                            <p>We connect families with authentic local priests, share details of rituals, and guide you gently through the process.</p>
+                                            <ul>
+                                                <li><a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i>Reach us on WhatsApp</a></li>
+                                                <li><a href="#" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i>See sacred sites on Instagram</a></li>
+                                                <li><a href="index.html" target="_blank" rel="noopener noreferrer"><i class="fas fa-globe"></i>Explore rituals on our website</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4 d-none d-md-block">
+                                        <div class="cta-icon">
+                                            <i class="fas fa-om"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </article>
                     </div>
 
@@ -203,28 +518,46 @@
                             <div class="widget">
                                 <h4 class="widget-title">Categories</h4>
                                 <ul class="list-unstyled category-list">
-                                    <li><a href="ritual.html">Understanding the Ritual <span class="float-right">(6)</span></a></li>
-                                    <li><a href="sacred.html">Sacred Places <span class="float-right">(13)</span></a></li>
-                                    <li><a href="services.html">Our Services <span class="float-right">(2)</span></a></li>
+                                    <li><a href="ritual.html">Understanding the Ritual <span
+                                                class="float-right">(6)</span></a></li>
+                                    <li><a href="sacred.html">Sacred Places <span class="float-right">(13)</span></a>
+                                    </li>
+                                    <li><a href="services.html">Our Services <span class="float-right">(2)</span></a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="widget">
                                 <h4 class="widget-title">Popular Posts</h4>
                                 <!-- Popular posts content here -->
-                                   <div class="popular-post">
-                                    <div class="popular-post-img"><a href="#"><img src="https://placehold.co/150x150/6c5ce7/ffffff?text=Guide" alt=""></a></div>
-                                    <div class="popular-post-info"><h5><a href="#">What Is Pind Daan? A Simple, Soulful Guide</a></h5><span>July 11, 2025</span></div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img
+                                                src="https://placehold.co/150x150/6c5ce7/ffffff?text=Guide" alt=""></a>
+                                    </div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">What Is Pind Daan? A Simple, Soulful Guide</a></h5><span>July
+                                            11, 2025</span>
+                                    </div>
                                 </div>
                                 <div class="popular-post">
-                                    <div class="popular-post-img"><a href="#"><img src="https://placehold.co/150x150/d63031/ffffff?text=NRIs" alt=""></a></div>
-                                    <div class="popular-post-info"><h5><a href="#">Ancestral Rites for NRIs: Keeping Traditions Alive</a></h5><span>July 07, 2025</span></div>
+                                    <div class="popular-post-img"><a href="#"><img
+                                                src="https://placehold.co/150x150/d63031/ffffff?text=NRIs" alt=""></a>
+                                    </div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">Ancestral Rites for NRIs: Keeping Traditions Alive</a></h5>
+                                        <span>July 07, 2025</span>
+                                    </div>
                                 </div>
                                 <div class="popular-post">
-                                    <div class="popular-post-img"><a href="#"><img src="https://placehold.co/150x150/e17055/ffffff?text=Gaya" alt=""></a></div>
-                                    <div class="popular-post-info"><h5><a href="#">Why Gaya Is Considered the Holiest Place for Pind Daan</a></h5><span>July 08, 2025</span></div>
+                                    <div class="popular-post-img"><a href="#"><img
+                                                src="https://placehold.co/150x150/e17055/ffffff?text=Gaya" alt=""></a>
+                                    </div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">Why Gaya Is Considered the Holiest Place for Pind Daan</a></h5>
+                                        <span>July 08, 2025</span>
+                                    </div>
                                 </div>
 
-                                
+
                             </div>
                         </div>
                     </div>
@@ -239,7 +572,8 @@
     </footer>
 
     <!-- WhatsApp Floating Icon -->
-    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
 
@@ -251,4 +585,5 @@
     <script src="./assets/js/plugins.js"></script>
     <script src="./assets/js/main.js"></script>
 </body>
+
 </html>
