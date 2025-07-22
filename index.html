@@ -211,6 +211,39 @@
             position: relative;
             z-index: 1;
         }
+
+        .usp-section {
+            background-color: var(--background-light);
+        }
+        .usp-card {
+            background: #ffffff;
+            padding: 35px 30px;
+            border-radius: 12px;
+            text-align: center;
+            height: 100%;
+            border: 1px solid #e9ecef;
+            transition: all 0.4s ease;
+        }
+        .usp-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(26, 46, 68, 0.1);
+            border-color: var(--accent-color);
+        }
+        .usp-card .usp-icon {
+            font-size: 3rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        .usp-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+        .usp-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
     </style>
 </head>
 
@@ -219,6 +252,35 @@
         <!-- Header Content -->
         <div class="header-area">
             <div class="main-header ">
+
+
+                <div class="header-top top-bg d-none d-lg-block">
+                 <div class="container">
+                  <div class="row justify-content-between align-items-center">
+                      <div class="col-lg-8">
+                          <div class="header-info-left">
+                              <ul>                          
+                                  <li>contact@shaardh.com</li>
+                                  <li>999999999</li>
+                                  <li>Bengaluru</li>
+                              </ul>
+                          </div>
+                      </div>
+                      <div class="col-lg-4">
+                          <div class="header-info-right f-right">
+                              <ul class="header-social">    
+                                  <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                  <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                  <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                 <!-- <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li> -->
+                              </ul>
+                          </div>
+                      </div>
+                     </div>
+                 </div>
+              </div>
+
+
                 <div class="header-bottom header-sticky">
                     <div class="container">
                         <div class="row align-items-center">
@@ -324,6 +386,72 @@
         </div>
         <!-- Ritual background End -->
 
+                   
+                        
+
+
+        <section class="usp-section section-padding" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-tittle text-center">
+                            <span>Our Commitment to You</span>
+                            <h2>What You Can Expect</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt-5">
+                    <!-- Card 1 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="usp-card">
+                            <div class="usp-icon"><i class="fas fa-gopuram"></i></div>
+                            <h3>Tailored to Your Beliefs</h3>
+                            <p>We guide you to the right sacred location based on your family’s unique traditions and interests, ensuring a deeply personal ritual.</p>
+                        </div>
+                    </div>
+                    <!-- Card 2 (ICON FIXED) -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="usp-card">
+                            <div class="usp-icon"><i class="fas fa-sitemap"></i></div>
+                            <h3>Curated Experiences</h3>
+                            <p>Choose from a Spiritual Sojourn, Architectural Pilgrimage, or an Adventure + Ritual journey. We customize the experience to your family's rhythm.</p>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="usp-card">
+                            <div class="usp-icon"><i class="fas fa-utensils"></i></div>
+                            <h3>Personalised Food & Stay</h3>
+                            <p>From sattvik thalis and regional offerings to comfortable guesthouses and homestays, we handle all arrangements with care.</p>
+                        </div>
+                    </div>
+                    <!-- Card 4 (ICON FIXED) -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="usp-card">
+                            <div class="usp-icon"><i class="fas fa-comments"></i></div>
+                            <h3>Multilingual Priests</h3>
+                            <p>We connect you with knowledgeable priests aligned with your specific customs, whether you’re Tamil, Telugu, Bengali, or from another tradition.</p>
+                        </div>
+                    </div>
+                    <!-- Card 5 (ICON FIXED) -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="usp-card">
+                            <div class="usp-icon"><i class="fas fa-globe"></i></div>
+                            <h3>Multi-Cultural Sensitivity</h3>
+                            <p>We understand and respect diverse family traditions, ensuring your ritual is performed with the utmost cultural sensitivity and reverence.</p>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="usp-card">
+                            <div class="usp-icon"><i class="fas fa-box-open"></i></div>
+                            <h3>All Materials Provided</h3>
+                            <p>We provide all necessary samagri (ritual materials), so you can focus entirely on the sacredness of the moment without any worries.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
         <!-- Favourite Places Start -->
         <div class="favourite-place place-padding pb-0" data-aos="fade-up">
             <div class="container">
