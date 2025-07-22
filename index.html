@@ -244,6 +244,81 @@
             line-height: 1.6;
             color: var(--text-light);
         }
+
+
+
+        
+        
+
+        
+        
+
+        
+        
+
+
+
+        .faq-section {
+            background-color: #fff;
+        }
+        .faq-accordion .card {
+            border: none;
+            background-color: transparent;
+            border-radius: 0 !important;
+            box-shadow: none;
+            margin-bottom: 15px; /* Space between each FAQ item */
+        }
+        .faq-accordion .card-header {
+            background-color: var(--primary-color);
+            border-radius: 8px !important; /* Rounded corners for the question bar */
+            padding: 0;
+            border: 0;
+            box-shadow: 0 5px 15px rgba(26, 46, 68, 0.1);
+        }
+        .faq-accordion .btn-link {
+            width: 100%;
+            text-align: left;
+            padding: 20px 25px;
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            font-size: 1.2rem;
+            color: #ffffff; /* White text */
+            text-decoration: none;
+            position: relative;
+            transition: all 0.3s ease;
+            text-transform: none; /* THIS IS THE FIX */
+        }
+        .faq-accordion .btn-link:hover {
+            text-decoration: none;
+            color: #ffffff;
+        }
+        .faq-accordion .btn-link[aria-expanded="true"] {
+            color: #ffffff;
+            background-color: var(--primary-color);
+        }
+        .faq-accordion .btn-link::after {
+            content: '\f078'; /* chevron-down */
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            position: absolute;
+            right: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            transition: transform 0.3s ease;
+            color: #ffffff;
+        }
+        .faq-accordion .btn-link[aria-expanded="true"]::after {
+            transform: translateY(-50%) rotate(180deg);
+        }
+        .faq-accordion .card-body {
+            padding: 20px 25px;
+            color: var(--text-light);
+            line-height: 1.8;
+            background-color: #fff;
+            border: 1px solid #e9ecef;
+            border-top: none;
+            border-radius: 0 0 8px 8px;
+        }
     </style>
 </head>
 
@@ -509,6 +584,175 @@
         </div>
         <!-- Other Places End -->
 
+
+
+        <section class="faq-section section-padding" data-aos="fade-up">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="section-tittle text-center">
+                            <span>Honest answers to questions many families ask us</span>
+                            <h2>Frequently Asked Questions</h2>
+                        </div>
+                        <div class="accordion faq-accordion mt-5" id="faqAccordion">
+                            <!-- FAQ Item 1 -->
+                            <div class="card">
+                                <div class="card-header" id="headingOne">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                            What is Pind Daan and why is it important?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Pind Daan is a sacred Vedic ritual that offers peace and moksha to the souls of departed ancestors. It’s an expression of love, gratitude, and spiritual responsibility.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- FAQ Item 2 -->
+                            <div class="card">
+                                <div class="card-header" id="headingTwo">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Which places do you offer Pind Daan services in?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        We curate personalised rituals in Gaya, Varanasi, Haridwar, Badrinath, Rameshwaram, Srirangapatna and many more sacred places.
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ... Add all 10 FAQ items following the same pattern ... -->
+                             <div class="card">
+                                <div class="card-header" id="headingThree">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            How do I know which location is right for my family?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Each place holds unique significance. We guide you based on your family tradition, personal connection, and the scriptural relevance of each site. Please reach out to us on Whatsapp.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingFour">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Can I book this from abroad or for someone else in India?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Yes. Many of our clients live outside India. We offer seamless coordination for your family and full support for remote arrangements.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingFive">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Do you provide end-to-end support?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Yes. From rituals and priest coordination to travel, stay, and food, we manage everything, allowing your family to focus on the prayer.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingSix">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+                                             Can I do Shraadh for a guru, friend, or someone not related to me?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        Absolutely. Intention (shraddha) matters most. You may offer prayers for anyone whose spiritual well-being you hold dear.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingSeven">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
+                                            Does the ritual have to be done during Pitru Paksha?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        While Pitru Paksha is ideal, rituals can also be performed on Amavasya, the death anniversary (tithi), or other auspicious dates. We can help you choose the right time.
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingEight">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
+                                            What items do we need to bring?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                       We provide a checklist once your booking is confirmed, but most items are arranged by our team. If there are specific items of emotional or traditional value, we will guide you.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingNine">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseNine" aria-expanded="false" aria-controls="collapseNine">
+                                            What is the cost of the full experience?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseNine" class="collapse" aria-labelledby="headingNine" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        We offer clear, flexible packages based on your preferences. Whether you're looking for a simple ceremony or a thoughtfully designed pilgrimage, we can help.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header" id="headingTen">
+                                    <h2 class="mb-0">
+                                        <button class="btn btn-link btn-block text-left collapsed" type="button" data-toggle="collapse" data-target="#collapseTen" aria-expanded="false" aria-controls="collapseTen">
+                                            How do I get started?
+                                        </button>
+                                    </h2>
+                                </div>
+                                <div id="collapseTen" class="collapse" aria-labelledby="headingTen" data-parent="#faqAccordion">
+                                    <div class="card-body">
+                                        You can fill the enquiry form, reach us on WhatsApp, or message us on Instagram. Our team will gently guide you through every step.
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
         <!-- Contact Us Section Start -->
         <div class="support-company-area support-padding fix contact-bg-section" data-background="assets/img/service/contact-bg.jpg" data-aos="zoom-in" id="contactForm">
             <div class="container">
@@ -532,6 +776,9 @@
         </div>
         <!-- Contact Us Section End -->
 
+
+
+        
     </main>
 
     <footer>
