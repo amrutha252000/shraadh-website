@@ -36,7 +36,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
 
-    <script src="config.js"></script>
+    
     <style>
         /* Your existing custom styles */
         #scrollUp {
@@ -1287,7 +1287,7 @@
     </footer>
 
     <!-- WhatsApp Floating Icon -->
-    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float"
+    <a href="https://wa.me/919570029090?text=I'm%20interested%20in%20your%20services" class="whatsapp-float"
         target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -1488,68 +1488,63 @@
         });
     </script>
 
-     <script type="module">
-        // Import the functions you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js";
-        import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js";
+    <!-- =============================================== -->
+<!-- SECURE FIREBASE INTEGRATION SCRIPT FOR HOSTING -->
+<!-- =============================================== -->
+<!-- Firebase SDKs are automatically managed by Firebase Hosting -->
+<script src="/__/firebase/9.6.10/firebase-app-compat.js"></script>
+<script src="/__/firebase/9.6.10/firebase-firestore-compat.js"></script>
+<script src="/__/firebase/init.js"></script>
 
-        // The firebaseConfig object is now loaded from config.js,
-        // so you don't need to define it here anymore.
+<script>
+    // Firebase is now initialized automatically by firebase/init.js
+    // We can just get a reference to the database
+    const db = firebase.firestore();
 
-        // Initialize Firebase using the config from the other file
-        const app = initializeApp(firebaseConfig);
-        const db = getFirestore(app);
+    const contactForm = document.getElementById('contactForm');
+    const formMessage = document.getElementById('form-message');
 
-        // ... the rest of your form submission code remains the same ...
-        // 4. GET a reference to your form and the message box
-        const contactForm = document.getElementById('contactForm');
-        const formMessage = document.getElementById('form-message');
+    contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
 
-        // 5. ADD an event listener for the form's 'submit' event
-        contactForm.addEventListener('submit', async (e) => {
-            // Prevent the default form submission (which reloads the page)
-            e.preventDefault();
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        submitButton.disabled = true;
+        submitButton.innerHTML = 'Sending...';
 
-            // Show a "Sending..." message
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            submitButton.disabled = true;
-            submitButton.innerHTML = 'Sending...';
+        const name = contactForm.name.value;
+        const phone = contactForm.phone.value;
+        const email = contactForm.email.value;
+        const message = contactForm.message.value;
 
-            // Get the data from the form fields
-            const name = contactForm.name.value;
-            const phone = contactForm.phone.value;
-            const email = contactForm.email.value;
-            const message = contactForm.message.value;
+        try {
+            // Add a new document to a collection named "inquiries"
+            await db.collection("inquiries").add({
+                name: name,
+                phone: phone,
+                email: email,
+                message: message,
+                submittedAt: new Date()
+            });
 
-            try {
-                // Try to add a new document to a collection named "inquiries"
-                const docRef = await addDoc(collection(db, "inquiries"), {
-                    name: name,
-                    phone: phone,
-                    email: email,
-                    message: message,
-                    submittedAt: new Date() // Add a timestamp
-                });
+            formMessage.textContent = "Thank you! Your message has been sent successfully.";
+            formMessage.className = 'success';
+            formMessage.style.display = 'block';
+            contactForm.reset();
 
-                // If successful, show a success message
-                formMessage.textContent = "Thank you! Your message has been sent successfully.";
-                formMessage.className = 'success';
-                formMessage.style.display = 'block';
-                contactForm.reset(); // Clear the form
+        } catch (error) {
+            console.error("Error adding document: ", error);
+            formMessage.textContent = "Sorry, there was an error sending your message. Please try again.";
+            formMessage.className = 'error';
+            formMessage.style.display = 'block';
+        } finally {
+            submitButton.disabled = false;
+            submitButton.innerHTML = 'Submit <i class="fas fa-paper-plane ml-2"></i>';
+        }
+    });
+</script>
+<!-- =============================================== -->
 
-            } catch (error) {
-                // If there's an error, log it to the console and show an error message
-                console.error("Error adding document: ", error);
-                formMessage.textContent = "Sorry, there was an error sending your message. Please try again.";
-                formMessage.className = 'error';
-                formMessage.style.display = 'block';
-            } finally {
-                // Re-enable the button after success or error
-                submitButton.disabled = false;
-                submitButton.innerHTML = 'Submit <i class="fas fa-paper-plane ml-2"></i>';
-            }
-        });
-    </script>
+     
 
 </body>
 
