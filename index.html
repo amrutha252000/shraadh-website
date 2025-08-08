@@ -502,6 +502,57 @@
             color: #721c24;
             border: 1px solid #f5c6cb;
         }
+
+                .calculator-wrapper {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 0;
+        }
+        .calculator-card {
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 15px 40px rgba(26, 46, 68, 0.1);
+        }
+        .form-control {
+            height: 50px;
+            border-radius: 8px;
+        }
+        .btn-primary {
+            background: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        .btn-primary:hover {
+            background: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+        #result-section {
+            display: none;
+            margin-top: 30px;
+            padding: 30px;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            background-color: #fdfdfd;
+        }
+        #result-section h3 {
+            color: var(--accent-color);
+        }
+        #result-section .result-item {
+            margin-bottom: 20px;
+        }
+        #result-section .result-item h4 {
+            font-size: 1.2rem;
+            display: flex;
+            align-items: center;
+        }
+        #result-section .result-item .fas {
+            color: var(--accent-color);
+            margin-right: 10px;
+        }
     </style>
 </head>
 
@@ -925,6 +976,37 @@
         <!-- Other Places End -->
 
 
+        <div class="calculator-wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="calculator-card">
+                            <div class="section-tittle text-center">
+                                <span>Guidance for Your Ritual</span>
+                                <h2>Shraadh Recommendation</h2>
+                                <p>Enter the date of your ancestor's passing to receive a suggested time and place for the Shraadh ceremony.</p>
+                            </div>
+                            
+                            <form id="shraadhForm" class="mt-4">
+                                <div class="form-group">
+                                    <label for="deathDate">Date of Passing</label>
+                                    <input type="date" class="form-control" id="deathDate" required>
+                                </div>
+                                <div class="text-center mt-3">
+                                    <button type="submit" class="btn btn-primary">Find Suggestions</button>
+                                </div>
+                            </form>
+
+                            <div id="result-section">
+                                <h3 class="text-center">Our Suggestions</h3>
+                                <hr>
+                                <div id="result-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         <section class="faq-section section-padding" data-aos="fade-up">
             <div class="container">
@@ -1536,6 +1618,60 @@
         submitButton.innerHTML = 'Submitting...';
     });
 </script>
+
+<script>
+        document.getElementById('shraadhForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const deathDateInput = document.getElementById('deathDate').value;
+            if (!deathDateInput) {
+                alert("Please enter a valid date.");
+                return;
+            }
+
+            const deathDate = new Date(deathDateInput);
+            const resultSection = document.getElementById('result-section');
+            const resultContent = document.getElementById('result-content');
+
+            // 1. Suggest the next annual Tithi (anniversary)
+            const nextAnniversary = new Date(deathDate);
+            // Set the year to the current year to find the next occurrence
+            nextAnniversary.setFullYear(new Date().getFullYear());
+            // If the date has already passed this year, set it to next year
+            if (nextAnniversary < new Date()) {
+                nextAnniversary.setFullYear(new Date().getFullYear() + 1);
+            }
+            const anniversaryDate = nextAnniversary.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+
+            // 2. Suggest the upcoming Pitru Paksha
+            // Note: These are placeholder dates for 2025. This would need to be updated annually.
+            const pitruPakshaStart = "September 6, 2025";
+            const pitruPakshaEnd = "September 20, 2025";
+
+            // 3. Suggest a sacred place
+            const sacredPlaces = ["Gaya", "Varanasi", "Haridwar", "Rameshwaram", "Prayagraj (Allahabad)"];
+            const suggestedPlace = sacredPlaces[Math.floor(Math.random() * sacredPlaces.length)];
+
+            // 4. Display the results
+            resultContent.innerHTML = `
+                <div class="result-item">
+                    <h4><i class="fas fa-calendar-alt"></i>Suggested Timings</h4>
+                    <ul>
+                        <li><strong>Annual Tithi (Anniversary):</strong> The next anniversary date for the Shraadh is on or around <strong>${anniversaryDate}</strong>.</li>
+                        <li><strong>Pitru Paksha:</strong> The most auspicious fortnight for all ancestors in 2025 is between <strong>${pitruPakshaStart} and ${pitruPakshaEnd}</strong>.</li>
+                    </ul>
+                </div>
+                <div class="result-item">
+                    <h4><i class="fas fa-gopuram"></i>Suggested Place</h4>
+                    <p>Performing the ritual at a sacred site (Punya Kshetra) holds deep significance. We recommend considering a journey to <strong>${suggestedPlace}</strong>.</p>
+                </div>
+                <hr>
+                <p class="text-center small"><em>Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. <a href="#contact">Contact us</a> for a detailed consultation.</em></p>
+            `;
+
+            resultSection.style.display = 'block';
+        });
+    </script>
 </body>
 
 </html>
