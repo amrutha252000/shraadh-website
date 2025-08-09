@@ -482,76 +482,105 @@
 
 
 
-        #form-message {
-            display: none;
+
+
+
+
+
+        .calculator-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+        .form-group input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        #calculate-btn {
+            width: 100%;
             padding: 15px;
-            margin-top: 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #calculate-btn:hover {
+            background-color: var(--accent-color);
+        }
+        
+        #calculate-btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        #results-container {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            background-color: #fdfdfd;
+            line-height: 1.7;
+            display: none; /* Hidden by default */
+            border: 1px solid #e0e0e0;
+        }
+        #results-container h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+        #results-container ul {
+            padding-left: 20px;
+        }
+        #results-container strong {
+            color: var(--primary-color);
+        }
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+        .error-message {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 15px;
             border-radius: 8px;
             text-align: center;
-            font-weight: 600;
-        }
-
-        #form-message.success {
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-        }
-
-        #form-message.error {
-            background-color: #f8d7da;
-            color: #721c24;
-            border: 1px solid #f5c6cb;
-        }
-
-                .calculator-wrapper {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 60px 0;
-        }
-        .calculator-card {
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 15px 40px rgba(26, 46, 68, 0.1);
-        }
-        .form-control {
-            height: 50px;
-            border-radius: 8px;
-        }
-        .btn-primary {
-            background: var(--primary-color);
-            border-color: var(--primary-color);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-weight: 600;
-        }
-        .btn-primary:hover {
-            background: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-        #result-section {
-            display: none;
-            margin-top: 30px;
-            padding: 30px;
-            border: 1px solid #e9ecef;
-            border-radius: 12px;
-            background-color: #fdfdfd;
-        }
-        #result-section h3 {
-            color: var(--accent-color);
-        }
-        #result-section .result-item {
-            margin-bottom: 20px;
-        }
-        #result-section .result-item h4 {
-            font-size: 1.2rem;
-            display: flex;
-            align-items: center;
-        }
-        #result-section .result-item .fas {
-            color: var(--accent-color);
-            margin-right: 10px;
         }
     </style>
 </head>
@@ -976,38 +1005,41 @@
         <!-- Other Places End -->
 
 
-        <div class="calculator-wrapper">
-            <div class="container">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="calculator-card">
-                            <div class="section-tittle text-center">
-                                <span>Guidance for Your Ritual</span>
-                                <h2>Shraadh Recommendation</h2>
-                                <p>Enter the date of your ancestor's passing to receive a suggested time and place for the Shraadh ceremony.</p>
-                            </div>
-                            
-                            <form id="shraadhForm" class="mt-4">
-                                <div class="form-group">
-                                    <label for="deathDate">Date of Passing</label>
-                                    <input type="date" class="form-control" id="deathDate" required>
-                                </div>
-                                <div class="text-center mt-3">
-                                    <button type="submit" class="btn btn-primary">Find Suggestions</button>
-                                </div>
-                            </form>
-
-                            <div id="result-section">
-                                <h3 class="text-center">Our Suggestions</h3>
-                                <hr>
-                                <div id="result-content"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <section class="section-padding">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-lg-6 col-md-8">
+  <h2>Vedic Shraadh Date Calculator</h2>
+        <p>Enter the details below to find the suggested Shraddha dates for 2025.</p>
+        
+        <div class="calculator-container">
+            
+       
+        <div class="form-group">
+            <label for="death-date">Date of Death</label>
+            <input type="date" id="death-date" required>
         </div>
 
+        <div class="form-group">
+            <label for="death-time">Time of Death</label>
+            <input type="time" id="death-time" required>
+        </div>
+
+        <div class="form-group">
+            <label for="death-place">Place of Death</label>
+            <input type="text" id="death-place" placeholder="e.g., Varanasi, India" required>
+        </div>
+
+        <button id="calculate-btn">Calculate Shraddha Dates</button>
+
+        <div id="results-container">
+            <!-- Results will be injected here by JavaScript -->
+        </div>
+    </div>
+    </div>
+        </div>
+    </div>
+</section>
         <section class="faq-section section-padding" data-aos="fade-up">
             <div class="container">
                 <div class="row justify-content-center">
@@ -1619,59 +1651,112 @@
     });
 </script>
 
-<script>
-        document.getElementById('shraadhForm').addEventListener('submit', function(e) {
-            e.preventDefault();
+      
 
-            const deathDateInput = document.getElementById('deathDate').value;
-            if (!deathDateInput) {
-                alert("Please enter a valid date.");
-                return;
-            }
 
-            const deathDate = new Date(deathDateInput);
-            const resultSection = document.getElementById('result-section');
-            const resultContent = document.getElementById('result-content');
 
-            // 1. Suggest the next annual Tithi (anniversary)
-            const nextAnniversary = new Date(deathDate);
-            // Set the year to the current year to find the next occurrence
-            nextAnniversary.setFullYear(new Date().getFullYear());
-            // If the date has already passed this year, set it to next year
-            if (nextAnniversary < new Date()) {
-                nextAnniversary.setFullYear(new Date().getFullYear() + 1);
-            }
-            const anniversaryDate = nextAnniversary.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const dateInput = document.getElementById('death-date');
+            const timeInput = document.getElementById('death-time');
+            const placeInput = document.getElementById('death-place');
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resultsContainer = document.getElementById('results-container');
 
-            // 2. Suggest the upcoming Pitru Paksha
-            // Note: These are placeholder dates for 2025. This would need to be updated annually.
-            const pitruPakshaStart = "September 6, 2025";
-            const pitruPakshaEnd = "September 20, 2025";
+            calculateBtn.addEventListener('click', async () => {
+                const dateOfDeath = dateInput.value;
+                const timeOfDeath = timeInput.value;
+                const placeOfDeath = placeInput.value;
 
-            // 3. Suggest a sacred place
-            const sacredPlaces = ["Gaya", "Varanasi", "Haridwar", "Rameshwaram", "Prayagraj (Allahabad)"];
-            const suggestedPlace = sacredPlaces[Math.floor(Math.random() * sacredPlaces.length)];
+                if (!dateOfDeath || !timeOfDeath || !placeOfDeath) {
+                    alert('Please fill in all fields.');
+                    return;
+                }
+                
+                // Show loading state
+                calculateBtn.disabled = true;
+                calculateBtn.textContent = 'Calculating...';
+                resultsContainer.style.display = 'block';
+                resultsContainer.innerHTML = '<p style="text-align:center;">Connecting to the cosmos, please wait...</p>';
 
-            // 4. Display the results
-            resultContent.innerHTML = `
-                <div class="result-item">
-                    <h4>Suggested Timings</h4>
-                    <ul>
-                        <li><strong>Annual Tithi (Anniversary):</strong> The next anniversary date for the Shraadh is on or around <strong>${anniversaryDate}</strong>.</li>
-                        <li><strong>Pitru Paksha:</strong> The most auspicious fortnight for all ancestors in 2025 is between <strong>${pitruPakshaStart} and ${pitruPakshaEnd}</strong>.</li>
-                    </ul>
-                </div>
-                <div class="result-item">
-                    <h4>Suggested Place</h4>
-                    <p>Performing the ritual at a sacred site (Punya Kshetra) holds deep significance. We recommend considering a journey to <strong>${suggestedPlace}</strong>.</p>
-                </div>
-                <hr>
-                <p class="text-center small"><em>Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. Contact us for a detailed consultation.</em></p>
-            `;
+                // Construct the prompt for the AI model
+                const prompt = `
+                    Based on Vedic astrology (Panchang), first determine the exact Shraadh tithi (lunar day, including paksha) for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}.
+                    Then, from the official Pitru Paksha 2025 calendar, find the single corresponding date that matches this tithi.
 
-            resultSection.style.display = 'block';
+                    Provide the answer as a JSON object with two keys:
+                    1. "annualTithi": A string describing the calculated tithi (e.g., "Shukla Paksha Dwitiya").
+                    2. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar (e.g., "September 18, 2025 (Dwitiya)").
+                `;
+
+                try {
+                    // This is the fetch call to the Google Gemini API
+                    let chatHistory = [];
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { 
+                        contents: chatHistory,
+                        generationConfig: {
+                            responseMimeType: "application/json",
+                            responseSchema: {
+                                type: "OBJECT",
+                                properties: {
+                                    "annualTithi": { "type": "STRING" },
+                                    "pitruPakshaDate": { "type": "STRING" }
+                                },
+                            }
+                        }
+                    };
+                    const apiKey = "AIzaSyA00PdUAuGWu6X7IS7uIwMJcc2wmsXVZy4"; // API key will be injected by the environment
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+                    
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    if (!response.ok) {
+                        throw new Error(`Network response was not ok. Status: ${response.status}`);
+                    }
+
+                    const result = await response.json();
+                    
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        
+                        const jsonText = result.candidates[0].content.parts[0].text;
+                        const data = JSON.parse(jsonText);
+
+                        // Format the response into beautiful HTML
+                        let htmlResult = `
+                            <h3>Suggested Shraadh Dates for 2025</h3>
+                            <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithi}</p>
+                            <p><strong>Corresponding Pitru Paksha Date:</strong>${data.pitruPakshaDate}</p>
+                            
+                            <p class="disclaimer">
+                                Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. 
+                                Contact us for a detailed consultation.</p>
+                        `;
+                        
+                        resultsContainer.innerHTML = htmlResult;
+
+                    } else {
+                        throw new Error("Invalid response structure from the API.");
+                    }
+
+                } catch (error) {
+                    resultsContainer.innerHTML = '<p class="error-message">An error occurred. Please try again later.</p>';
+                    console.error('There was a problem:', error);
+                } finally {
+                    // Reset button state
+                    calculateBtn.disabled = false;
+                    calculateBtn.textContent = 'Calculate Shraddha Dates';
+                }
+            });
         });
     </script>
+
 </body>
 
 </html>
