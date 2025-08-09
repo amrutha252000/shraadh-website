@@ -1654,6 +1654,7 @@
       
 
 
+               
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
@@ -1679,15 +1680,18 @@
                 resultsContainer.style.display = 'block';
                 resultsContainer.innerHTML = '<p style="text-align:center;">Connecting to the cosmos, please wait...</p>';
 
-                // Construct the prompt for the AI model
+                // ===============================================
+                // UPDATED AND MORE PRECISE PROMPT
+                // ===============================================
                 const prompt = `
-                    Based on Vedic astrology (Panchang), first determine the exact Shraadh tithi (lunar day, including paksha) for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}.
-                    Then, from the official Pitru Paksha 2025 calendar, find the single corresponding date that matches this tithi.
+                    Based on Vedic astrology (Panchang), first determine the exact Shraadh tithi (including paksha, e.g., "Krishna Paksha, Ashtami") for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}.
+                    Second, given that the Pitru Paksha in 2025 runs from September 7 to September 21, find the single Gregorian date within this specific range that corresponds to the calculated tithi.
 
                     Provide the answer as a JSON object with two keys:
-                    1. "annualTithi": A string describing the calculated tithi (e.g., "Shukla Paksha Dwitiya").
-                    2. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar (e.g., "September 18, 2025 (Dwitiya)").
+                    1. "annualTithi": A string describing the calculated tithi (e.g., "Krishna Paksha, Ashtami").
+                    2. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar (e.g., "September 14, 2025 (Ashtami)").
                 `;
+                // ===============================================
 
                 try {
                     // This is the fetch call to the Google Gemini API
@@ -1732,10 +1736,11 @@
                         let htmlResult = `
                             <h3>Suggested Shraadh Dates for 2025</h3>
                             <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithi}</p>
-                            <p><strong>Corresponding Pitru Paksha Date:</strong>${data.pitruPakshaDate}</p>
-                            
-                            <p class="disclaimer">
-                                Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. 
+                            <p><strong>Corresponding Pitru Paksha Date:</strong></p>
+                            <ul>
+                                <li>${data.pitruPakshaDate}</li>
+                            </ul>
+                            <p class="disclaimer"> Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. 
                                 Contact us for a detailed consultation.</p>
                         `;
                         
