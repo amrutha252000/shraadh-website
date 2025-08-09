@@ -1656,6 +1656,10 @@
 
                
 
+
+                
+                
+                    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             const dateInput = document.getElementById('death-date');
@@ -1678,18 +1682,21 @@
                 calculateBtn.disabled = true;
                 calculateBtn.textContent = 'Calculating...';
                 resultsContainer.style.display = 'block';
-                resultsContainer.innerHTML = '<p style="text-align:center;">Connecting to the cosmos, please wait...</p>';
+                resultsContainer.innerHTML = '<p style="text-align:center;">Please wait...</p>';
 
                 // ===============================================
-                // UPDATED AND MORE PRECISE PROMPT
+                // UPDATED PROMPT TO SPECIFY DATE FORMAT
                 // ===============================================
                 const prompt = `
-                    Based on Vedic astrology (Panchang), first determine the exact Shraadh tithi (including paksha, e.g., "Krishna Paksha, Ashtami") for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}.
-                    Second, given that the Pitru Paksha in 2025 runs from September 7 to September 21, find the single Gregorian date within this specific range that corresponds to the calculated tithi.
+                    Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
+                    1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
+                    2. The exact Gregorian date in 2025 for that annual Shraadh tithi, formatted as DD/MM/YYYY.
+                    3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as DD/MM/YYYY followed by the tithi name in parentheses.
 
-                    Provide the answer as a JSON object with two keys:
-                    1. "annualTithi": A string describing the calculated tithi (e.g., "Krishna Paksha, Ashtami").
-                    2. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar (e.g., "September 14, 2025 (Ashtami)").
+                    Provide the answer as a JSON object with three keys:
+                    1. "annualTithiName": A string for the tithi name.
+                    2. "annualTithiDate": A string for the Gregorian date of the annual tithi in 2025, in DD/MM/YYYY format.
+                    3. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar, in DD/MM/YYYY (Tithi Name) format.
                 `;
                 // ===============================================
 
@@ -1704,7 +1711,8 @@
                             responseSchema: {
                                 type: "OBJECT",
                                 properties: {
-                                    "annualTithi": { "type": "STRING" },
+                                    "annualTithiName": { "type": "STRING" },
+                                    "annualTithiDate": { "type": "STRING" },
                                     "pitruPakshaDate": { "type": "STRING" }
                                 },
                             }
@@ -1735,12 +1743,10 @@
                         // Format the response into beautiful HTML
                         let htmlResult = `
                             <h3>Suggested Shraadh Dates for 2025</h3>
-                            <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithi}</p>
-                            <p><strong>Corresponding Pitru Paksha Date:</strong></p>
-                            <ul>
-                                <li>${data.pitruPakshaDate}</li>
-                            </ul>
-                            <p class="disclaimer"> Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. 
+                            <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithiName}</p>
+                            <p><strong>Next Annual Shraadh Date:</strong><br>${data.annualTithiDate}</p>
+                            <p><strong>Corresponding Pitru Paksha Date:</strong>${data.pitruPakshaDate}</p>
+                            <p class="disclaimer">Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. 
                                 Contact us for a detailed consultation.</p>
                         `;
                         
