@@ -1018,19 +1018,24 @@
         <div class="form-group">
             <label for="death-date">Date of Death</label>
             <input type="date" id="death-date" required>
+            <!-- <input type="text" id="death-date" placeholder="DD/MM/YYYY" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required> -->
         </div>
 
         <div class="form-group">
             <label for="death-time">Time of Death</label>
             <input type="time" id="death-time" required>
+            <!-- <input type="text" id="death-time" placeholder="--:-- --" onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'" required> -->
+            <small class="form-text text-muted">Please use a 12-hour clock format and specify AM/PM.</small>
+        
         </div>
 
         <div class="form-group">
             <label for="death-place">Place of Death</label>
             <input type="text" id="death-place" placeholder="e.g., Varanasi, India" required>
+            
         </div>
 
-        <button id="calculate-btn">Calculate Shraddha Dates</button>
+        <button id="calculate-btn">Calculate Shraadh Dates</button>
 
         <div id="results-container">
             <!-- Results will be injected here by JavaScript -->
@@ -1687,19 +1692,81 @@
                 // ===============================================
                 // UPDATED PROMPT TO SPECIFY DATE FORMAT
                 // ===============================================
+                // const prompt = `
+                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
+                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
+                //     2. The exact Gregorian date in 2025 for that annual Shraadh tithi, formatted as DD/MM/YYYY.
+                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as DD/MM/YYYY followed by the tithi name in parentheses.
+
+                //     Provide the answer as a JSON object with three keys:
+                //     1. "annualTithiName": A string for the tithi name.
+                //     2. "annualTithiDate": A string for the Gregorian date of the annual tithi in 2025, in DD/MM/YYYY format.
+                //     3. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar, in DD/MM/YYYY (Tithi Name) format.
+                // `;
+                // ===============================================
+                
+                
+                
+                // const prompt = `
+                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
+                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
+                //     2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
+                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as "DD/MM/YYYY (Tithi Name)".
+
+                //     Provide the answer as a JSON object with three keys:
+                //     1. "annualTithiName": A string for the tithi name.
+                //     2. "annualTithiDateTime": A string for the Gregorian date and time of the annual tithi in 2025.
+                //     3. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar.
+                // `;
+
+
+
+                // const prompt = `
+                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
+                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
+                //     2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
+                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi.
+                //     4. The name of that specific Pitru Paksha Shraadh day (e.g., "Shashthi Shraddha").
+
+                //     Provide the answer as a JSON object with four keys:
+                //     1. "annualTithiName": A string for the tithi name.
+                //     2. "annualTithiDateTime": A string for the Gregorian date and time of the annual tithi in 2025.
+                //     3. "pitruPakshaDate": A string for the matching date from the Pitru Paksha 2025 calendar, formatted as "DD/MM/YYYY".
+                //     4. "pitruPakshaShraddhaName": A string for the name of the Shraadh day.
+                // `;
+
+
+                // const prompt = `
+                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
+                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
+                //     2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
+                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi.
+                //     4. The name of that specific Pitru Paksha Shraadh day (e.g., "Shashthi Shraddha").
+
+                //     Provide the answer as a JSON object with four keys. For example:
+                //     {
+                //       "annualTithiName": "Ashadha Shukla Shashthi",
+                //       "annualTithiDateTime": "06/07/2025 at 10:45 AM",
+                //       "pitruPakshaDate": "12/09/2025",
+                //       "pitruPakshaShraddhaName": "Shashthi Shraddha"
+                //     }
+                // `;
+                // ===============================================
+
+
                 const prompt = `
                     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
                     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
-                    2. The exact Gregorian date in 2025 for that annual Shraadh tithi, formatted as DD/MM/YYYY.
-                    3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as DD/MM/YYYY followed by the tithi name in parentheses.
+                    2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
+                    3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as "DD/MM/YYYY (Name of Shraddha)".
 
-                    Provide the answer as a JSON object with three keys:
-                    1. "annualTithiName": A string for the tithi name.
-                    2. "annualTithiDate": A string for the Gregorian date of the annual tithi in 2025, in DD/MM/YYYY format.
-                    3. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar, in DD/MM/YYYY (Tithi Name) format.
+                    Provide the answer as a JSON object with three keys. For example:
+                    {
+                      "annualTithiName": "Ashadha Shukla Shashthi",
+                      "annualTithiDateTime": "06/07/2025 at 10:45 AM",
+                      "pitruPakshaDate": "12/09/2025 (Shashthi Shraddha)"
+                    }
                 `;
-                // ===============================================
-
                 try {
                     // This is the fetch call to the Google Gemini API
                     let chatHistory = [];
