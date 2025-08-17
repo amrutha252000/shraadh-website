@@ -365,6 +365,36 @@
             z-index: -1;
             /* Places the overlay behind the footer content */
         }
+
+
+        .main-menu ul ul.submenu {
+            position: absolute;
+            width: 200px;
+            background: #fff;
+            left: 0;
+            top: 100%;
+            visibility: hidden;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 15px 0;
+            transition: all .3s ease-out 0s;
+        }
+        .main-menu ul li:hover > ul.submenu {
+            visibility: visible;
+            opacity: 1;
+        }
+        .main-menu ul ul.submenu li {
+            display: block;
+        }
+        .main-menu ul ul.submenu li > a {
+            padding: 10px 20px !important;
+            font-size: 15px !important;
+        }
+        .main-menu ul ul.submenu li > a .count {
+            color: var(--text-light);
+            font-size: 14px;
+        }
     </style>
 </head>
 
@@ -387,7 +417,17 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="blog.html">Details</a></li>
+                                             <li class="dropdown">
+                                                <a href="blog.html">Details</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">All Posts <span class="count">(23)</span></a></li>
+                                                    <li><a href="ritual.html">Understanding the Ritual <span class="count">(7)</span></a></li>
+                                                    <li><a href="sacred.html">Sacred Places <span class="count">(14)</span></a></li>
+                                                    <li><a href="services.html">Our Services <span class="count">(3)</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <!-- <li><a href="blog.html">Details</a></li> -->
+                                            <li><a href="shraadh-calculator.html">Calculator</a></li>
                                             <li><a href="index.html#contactForm">Contact Us</a></li>
                                         </ul>
                                     </nav>

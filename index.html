@@ -3,12 +3,15 @@
 
 <head>
     <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-P9PXGLS7');</script>
-<!-- End Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9PXGLS7');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Shraadh</title>
@@ -525,6 +528,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             font-size: 16px;
             transition: border-color 0.3s ease;
         }
+
         .form-group input:focus {
             border-color: var(--accent-color);
             outline: none;
@@ -546,7 +550,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         #calculate-btn:hover {
             background-color: var(--accent-color);
         }
-        
+
         #calculate-btn:disabled {
             background-color: #95a5a6;
             cursor: not-allowed;
@@ -559,21 +563,26 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: left;
             background-color: #fdfdfd;
             line-height: 1.7;
-            display: none; /* Hidden by default */
+            display: none;
+            /* Hidden by default */
             border: 1px solid #e0e0e0;
         }
+
         #results-container h3 {
             margin-top: 0;
             color: var(--accent-color);
             text-align: center;
             margin-bottom: 15px;
         }
+
         #results-container ul {
             padding-left: 20px;
         }
+
         #results-container strong {
             color: var(--primary-color);
         }
+
         .disclaimer {
             font-size: 0.8rem;
             color: #7f8c8d;
@@ -581,6 +590,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             text-align: center;
             font-style: italic;
         }
+
         .error-message {
             color: #721c24;
             background-color: #f8d7da;
@@ -589,14 +599,49 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             border-radius: 8px;
             text-align: center;
         }
+
+        .button.boxed-btn {
+            color: #ffffff !important;
+            /* Sets the text color to white */
+        }
+
+
+        .main-menu ul ul.submenu {
+            position: absolute;
+            width: 200px;
+            background: #fff;
+            left: 0;
+            top: 100%;
+            visibility: hidden;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            padding: 15px 0;
+            transition: all .3s ease-out 0s;
+        }
+        .main-menu ul li:hover > ul.submenu {
+            visibility: visible;
+            opacity: 1;
+        }
+        .main-menu ul ul.submenu li {
+            display: block;
+        }
+        .main-menu ul ul.submenu li > a {
+            padding: 10px 20px !important;
+            font-size: 15px !important;
+        }
+        .main-menu ul ul.submenu li > a .count {
+            color: var(--text-light);
+            font-size: 14px;
+        }
     </style>
 </head>
 
 <body>
     <!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9PXGLS7"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9PXGLS7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
         <!-- Header Content -->
         <div class="header-area">
@@ -609,7 +654,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             <div class="col-lg-8">
                                 <div class="header-info-left">
                                     <ul>
-                                        <li>contact@shaardh.com</li>
+                                        <li>contact@shraadh.com</li>
                                         <li>+91 9570029090</li>
                                         <li>Bengaluru</li>
                                     </ul>
@@ -644,7 +689,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                     <nav>
                                         <ul id="navigation">
                                             <li><a href="index.html">Home</a></li>
-                                            <li><a href="blog.html">Details</a></li>
+                                             <li class="dropdown">
+                                                <a href="blog.html">Details</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">All Posts <span class="count">(23)</span></a></li>
+                                                    <li><a href="ritual.html">Understanding the Ritual <span class="count">(7)</span></a></li>
+                                                    <li><a href="sacred.html">Sacred Places <span class="count">(14)</span></a></li>
+                                                    <li><a href="services.html">Our Services <span class="count">(3)</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <!-- <li><a href="blog.html">Details</a></li> -->
+                                            <li><a href="shraadh-calculator.html">Calculator</a></li>
                                             <li><a href="#contactForm">Contact Us</a></li>
                                         </ul>
                                     </nav>
@@ -1016,46 +1071,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- Other Places End -->
 
 
-        <section class="section-padding">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-lg-6 col-md-8">
-  <h2>Vedic Shraadh Date Calculator</h2>
-        <p>Enter the details below to find the suggested Shraddha dates for 2025.</p>
         
-        <div class="calculator-container">
-            
-       
-        <div class="form-group">
-            <label for="death-date">Date of Death</label>
-            <input type="date" id="death-date" required>
-            <!-- <input type="text" id="death-date" placeholder="DD/MM/YYYY" onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required> -->
-        </div>
-
-        <div class="form-group">
-            <label for="death-time">Time of Death</label>
-            <input type="time" id="death-time" required>
-            <!-- <input type="text" id="death-time" placeholder="--:-- --" onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'" required> -->
-            <small class="form-text text-muted">Please use a 12-hour clock format and specify AM/PM.</small>
-        
-        </div>
-
-        <div class="form-group">
-            <label for="death-place">Place of Death</label>
-            <input type="text" id="death-place" placeholder="e.g., Varanasi, India" required>
-            
-        </div>
-
-        <button id="calculate-btn">Calculate Shraadh Dates</button>
-
-        <div id="results-container">
-            <!-- Results will be injected here by JavaScript -->
-        </div>
-    </div>
-    </div>
-        </div>
-    </div>
-</section>
         <section class="faq-section section-padding" data-aos="fade-up">
             <div class="container">
                 <div class="row justify-content-center">
@@ -1313,9 +1329,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                                 <div class="row">
                                     <div class="col-sm-6">
                                         <div class="form-group-floating"><i class="fas fa-user"></i>
-                                            <input
-                                                class="form-control" name="Last Name" id="name" type="text" placeholder=" "
-                                                required><label for="name">Your Name*</label></div>
+                                            <input class="form-control" name="Last Name" id="name" type="text"
+                                                placeholder=" " required><label for="name">Your Name*</label>
+                                        </div>
                                     </div>
                                     <div class="col-sm-6">
                                         <div class="form-group-floating"><i class="fas fa-phone"></i><input
@@ -1653,199 +1669,30 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- =============================================== -->
 
 
-<script>
-    const contactForm = document.getElementById('contactForm');
-    const formMessage = document.getElementById('form-message');
-
-    contactForm.addEventListener('submit', function(e) {
-        // This will allow the form to submit normally to Zoho's thank you page.
-        // For a more advanced setup (submitting in the background),
-        // you would use fetch() here, but this is the simplest method.
-        const submitButton = contactForm.querySelector('button[type="submit"]');
-        submitButton.disabled = true;
-        submitButton.innerHTML = 'Submitting...';
-    });
-</script>
-
-      
-
-
-               
-
-
-                
-                
-                    
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const dateInput = document.getElementById('death-date');
-            const timeInput = document.getElementById('death-time');
-            const placeInput = document.getElementById('death-place');
-            const calculateBtn = document.getElementById('calculate-btn');
-            const resultsContainer = document.getElementById('results-container');
+        const contactForm = document.getElementById('contactForm');
+        const formMessage = document.getElementById('form-message');
 
-            calculateBtn.addEventListener('click', async () => {
-                const dateOfDeath = dateInput.value;
-                const timeOfDeath = timeInput.value;
-                const placeOfDeath = placeInput.value;
-
-                if (!dateOfDeath || !timeOfDeath || !placeOfDeath) {
-                    alert('Please fill in all fields.');
-                    return;
-                }
-                
-                // Show loading state
-                calculateBtn.disabled = true;
-                calculateBtn.textContent = 'Calculating...';
-                resultsContainer.style.display = 'block';
-                resultsContainer.innerHTML = '<p style="text-align:center;">Please wait...</p>';
-
-                // ===============================================
-                // UPDATED PROMPT TO SPECIFY DATE FORMAT
-                // ===============================================
-                // const prompt = `
-                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
-                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
-                //     2. The exact Gregorian date in 2025 for that annual Shraadh tithi, formatted as DD/MM/YYYY.
-                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as DD/MM/YYYY followed by the tithi name in parentheses.
-
-                //     Provide the answer as a JSON object with three keys:
-                //     1. "annualTithiName": A string for the tithi name.
-                //     2. "annualTithiDate": A string for the Gregorian date of the annual tithi in 2025, in DD/MM/YYYY format.
-                //     3. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar, in DD/MM/YYYY (Tithi Name) format.
-                // `;
-                // ===============================================
-                
-                
-                
-                // const prompt = `
-                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
-                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
-                //     2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
-                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as "DD/MM/YYYY (Tithi Name)".
-
-                //     Provide the answer as a JSON object with three keys:
-                //     1. "annualTithiName": A string for the tithi name.
-                //     2. "annualTithiDateTime": A string for the Gregorian date and time of the annual tithi in 2025.
-                //     3. "pitruPakshaDate": A single string for the matching date from the Pitru Paksha 2025 calendar.
-                // `;
-
-
-
-                // const prompt = `
-                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
-                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
-                //     2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
-                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi.
-                //     4. The name of that specific Pitru Paksha Shraadh day (e.g., "Shashthi Shraddha").
-
-                //     Provide the answer as a JSON object with four keys:
-                //     1. "annualTithiName": A string for the tithi name.
-                //     2. "annualTithiDateTime": A string for the Gregorian date and time of the annual tithi in 2025.
-                //     3. "pitruPakshaDate": A string for the matching date from the Pitru Paksha 2025 calendar, formatted as "DD/MM/YYYY".
-                //     4. "pitruPakshaShraddhaName": A string for the name of the Shraadh day.
-                // `;
-
-
-                // const prompt = `
-                //     Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
-                //     1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
-                //     2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
-                //     3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi.
-                //     4. The name of that specific Pitru Paksha Shraadh day (e.g., "Shashthi Shraddha").
-
-                //     Provide the answer as a JSON object with four keys. For example:
-                //     {
-                //       "annualTithiName": "Ashadha Shukla Shashthi",
-                //       "annualTithiDateTime": "06/07/2025 at 10:45 AM",
-                //       "pitruPakshaDate": "12/09/2025",
-                //       "pitruPakshaShraddhaName": "Shashthi Shraddha"
-                //     }
-                // `;
-                // ===============================================
-
-
-                const prompt = `
-                    Based on Vedic astrology (Panchang), for a person who passed away on ${dateOfDeath} at ${timeOfDeath} in ${placeOfDeath}, calculate the following for the year 2025:
-                    1. The name of the annual Shraadh tithi (e.g., "Krishna Paksha, Ashtami").
-                    2. The exact Gregorian date and time in 2025 for that annual Shraadh tithi, formatted as "DD/MM/YYYY at HH:MM AM/PM".
-                    3. The single corresponding date from the Pitru Paksha 2025 calendar (September 7 to September 21, 2025) that matches the tithi, formatted as "DD/MM/YYYY (Name of Shraddha)".
-
-                    Provide the answer as a JSON object with three keys. For example:
-                    {
-                      "annualTithiName": "Ashadha Shukla Shashthi",
-                      "annualTithiDateTime": "06/07/2025 at 10:45 AM",
-                      "pitruPakshaDate": "12/09/2025 (Shashthi Shraddha)"
-                    }
-                `;
-                try {
-                    // This is the fetch call to the Google Gemini API
-                    let chatHistory = [];
-                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
-                    const payload = { 
-                        contents: chatHistory,
-                        generationConfig: {
-                            responseMimeType: "application/json",
-                            responseSchema: {
-                                type: "OBJECT",
-                                properties: {
-                                    "annualTithiName": { "type": "STRING" },
-                                    "annualTithiDate": { "type": "STRING" },
-                                    "pitruPakshaDate": { "type": "STRING" }
-                                },
-                            }
-                        }
-                    };
-                    const apiKey = "AIzaSyA00PdUAuGWu6X7IS7uIwMJcc2wmsXVZy4"; // API key will be injected by the environment
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                    
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(payload)
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`Network response was not ok. Status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-                    
-                    if (result.candidates && result.candidates.length > 0 &&
-                        result.candidates[0].content && result.candidates[0].content.parts &&
-                        result.candidates[0].content.parts.length > 0) {
-                        
-                        const jsonText = result.candidates[0].content.parts[0].text;
-                        const data = JSON.parse(jsonText);
-
-                        // Format the response into beautiful HTML
-                        let htmlResult = `
-                            <h3>Suggested Shraadh Dates for 2025</h3>
-                            <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithiName}</p>
-                            <p><strong>Next Annual Shraadh Date:</strong><br>${data.annualTithiDate}</p>
-                            <p><strong>Corresponding Pitru Paksha Date:</strong>${data.pitruPakshaDate}</p>
-                            <p class="disclaimer">Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. 
-                                Contact us for a detailed consultation.</p>
-                        `;
-                        
-                        resultsContainer.innerHTML = htmlResult;
-
-                    } else {
-                        throw new Error("Invalid response structure from the API.");
-                    }
-
-                } catch (error) {
-                    resultsContainer.innerHTML = '<p class="error-message">An error occurred. Please try again later.</p>';
-                    console.error('There was a problem:', error);
-                } finally {
-                    // Reset button state
-                    calculateBtn.disabled = false;
-                    calculateBtn.textContent = 'Calculate Shraddha Dates';
-                }
-            });
+        contactForm.addEventListener('submit', function (e) {
+            // This will allow the form to submit normally to Zoho's thank you page.
+            // For a more advanced setup (submitting in the background),
+            // you would use fetch() here, but this is the simplest method.
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            submitButton.disabled = true;
+            submitButton.innerHTML = 'Submitting...';
         });
     </script>
 
+
+
+
+
+
+
+
+
+
+   
 </body>
 
 </html>
