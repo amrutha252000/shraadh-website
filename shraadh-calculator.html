@@ -1,0 +1,560 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shraadh Suggestion Tool</title>
+    <meta name="description" content="Find a suggested time and place to perform Shraadh for your ancestors.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/logo3.jpg">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* Using the same professional styles from your main site */
+        :root {
+            --primary-color: #1A2E44;
+            --accent-color: #C0A16E;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --background-light: #f8f9fa;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #4A4A4A;
+            background-color: var(--background-light);
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Lora', serif;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* HEADER STYLES */
+        .logo2 img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        .header-area .header-bottom {
+            background-color: #ffffff;
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .main-menu ul li a {
+            color: var(--primary-color) !important;
+            font-weight: 600;
+        }
+
+        .main-menu ul li a:hover {
+            color: var(--accent-color) !important;
+        }
+
+        .main-menu ul ul.submenu {
+            position: absolute;
+            width: 200px;
+            background: #fff;
+            left: 0;
+            top: 100%;
+            visibility: hidden;
+            opacity: 0;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            padding: 15px 0;
+            transition: all .3s ease-out 0s;
+        }
+
+        .main-menu ul li:hover>ul.submenu {
+            visibility: visible;
+            opacity: 1;
+        }
+
+        .main-menu ul ul.submenu li {
+            display: block;
+        }
+
+        .main-menu ul ul.submenu li>a {
+            padding: 10px 20px !important;
+            font-size: 15px !important;
+        }
+
+        .main-menu ul ul.submenu li>a .count {
+            color: var(--text-light);
+            font-size: 14px;
+        }
+
+        /* Page-specific styles */
+        .calculator-wrapper {
+            padding: 180px 0 60px 0;
+        }
+
+        .calculator-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: var(--accent-color);
+            outline: none;
+        }
+
+        #calculate-btn {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background-color: var(--primary-color);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #calculate-btn:hover {
+            background-color: var(--accent-color);
+        }
+
+        #calculate-btn:disabled {
+            background-color: #95a5a6;
+            cursor: not-allowed;
+        }
+
+        #results-container {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            background-color: #fdfdfd;
+            line-height: 1.7;
+            display: none;
+            border: 1px solid #e0e0e0;
+        }
+
+        #results-container h3 {
+            margin-top: 0;
+            color: var(--accent-color);
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        #results-container ul {
+            padding-left: 20px;
+        }
+
+        #results-container strong {
+            color: var(--primary-color);
+        }
+
+        .disclaimer {
+            font-size: 0.8rem;
+            color: #7f8c8d;
+            margin-top: 15px;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .error-message {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+         /* .footer-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(26, 46, 68, 0.9);
+            z-index: -1;
+        } */
+
+        /* .footer-padding {
+            padding-top: 70px;
+            padding-bottom: 50px;
+        }
+
+        .footer-contact-info p {
+            color: #a5a5a5;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer-contact-info p a {
+            color: #a5a5a5;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-info p a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+
+        .footer-contact-info .fas {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+
+        .footer-social a {
+            color: #fff;
+        } */
+
+      
+.checkbox-label .custom-checkbox {
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 8px; /* This adds the space you need */
+    color: #ccc;
+    transition: color 0.3s ease;
+}
+
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Header Content -->
+        <div class="header-area">
+            <div class="main-header ">
+                <div class="header-bottom header-sticky">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo logo2">
+                                    <a href="index.html"><img src="assets/img/logo3.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                            <li class="dropdown">
+                                                <a href="blog.html">Details</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">All Posts <span
+                                                                class="count">(23)</span></a></li>
+                                                    <li><a href="ritual.html">Understanding the Ritual <span
+                                                                class="count">(7)</span></a></li>
+                                                    <li><a href="sacred.html">Sacred Places <span
+                                                                class="count">(14)</span></a></li>
+                                                    <li><a href="services.html">Our Services <span
+                                                                class="count">(3)</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="shraadh-calculator.html">Calculator</a></li>
+                                            <li><a href="index.html#contactForm">Contact Us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="calculator-wrapper">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-6 col-md-8">
+                        <div class="calculator-container">
+                            <h2>Vedic Shraadh Date Calculator</h2>
+
+                            <form id="shraadhForm">
+                                <p>Enter your details below</p>
+                                <div class="form-group">
+                                    <label for="user-name">Your Name*</label>
+                                    <input type="text" id="user-name" placeholder="Enter your full name" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="user-phone">Phone Number*</label>
+                                    <input type="tel" id="user-phone" placeholder="Enter your phone number" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="user-email">Email Address (Optional)</label>
+                                    <input type="email" id="user-email" placeholder="Enter your email address">
+                                </div>
+
+                                <hr>
+                                <p>Enter your Ancestors Passing details below</p>
+                                <div class="form-group">
+                                    <label for="death-date">Date of Passing</label>
+                                    <input type="text" id="death-date" placeholder="MM/DD/YYYY"
+                                        onfocus="(this.type='date')" onblur="if(!this.value)this.type='text'" required>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="death-time">Time of Passing</label>
+                                    <input type="text" id="death-time" placeholder="--:-- --"
+                                        onfocus="(this.type='time')" onblur="if(!this.value)this.type='text'" required>
+                                    <small class="form-text text-muted">Please use a 12-hour clock format and specify
+                                        AM/PM.</small>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="death-place">Place of Passing</label>
+                                    <input type="text" id="death-place" placeholder="e.g., Varanasi, India" required>
+                                </div>
+
+                                <button type="submit" id="calculate-btn"> Submit</button>
+
+                                <div id="results-container">
+                                    <!-- Results will be injected here by JavaScript -->
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+   <footer class="mt-5">
+        <div class="footer-area footer-padding footer-bg" data-background="assets/img/service/footer_bg.jpg">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+
+                    <!-- Main Footer Column (with new contact info) -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="single-footer-caption mb-20">
+                            <div class="logo logo2">
+                                <a href="index.html">
+                                    <h2 style="font-size: 40px; color: #ffffff;">SHRAADH</h2>
+                                </a>
+                            </div>
+                            <div class="footer-pera">
+                                <p class="mt-4 mb-0">Your trusted partner for sacred journeys and ancestral rites,
+                                    providing guidance and support with the utmost care and respect. Let us take care of
+                                    Everything while you Focus on Honouring your Ancestors.</p>
+                            </div>
+                            <!-- New Contact Info Block -->
+                            <div class="footer-contact-info mt-4">
+                                <p><i class="fas fa-globe"></i><a href="http://shraadh.org" target="_blank"
+                                        rel="noopener noreferrer">shraadh.org</a></p>
+                                <p><i class="fas fa-envelope"></i><a
+                                        href="mailto:contact@shraadh.org">contact@shraadh.org</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Column -->
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Navigate</h4>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="blog.html">Details</a></li>
+                                    <li><a href="#contactForm">Contact Us</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Column -->
+                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Let us Help you</h4>
+                                <ul>
+                                    <li><a href="step_by_step_guide.html">Steps to perform Pind-Daan</a></li>
+                                    <li><a href="#">Our Priests</a></li>
+                                    <li><a href="#">Beyond Rituals</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="row">
+                    <div class="col-xl-7 col-lg-7 col-md-7">
+                        <div class="footer-copy-right">
+                            <p>Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | Shraadh
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5">
+                        <div class="footer-social f-right">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100054528965996"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/15551234567?text=I'm%20interested%20in%20your%20services" class="whatsapp-float"
+        target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const shraadhForm = document.getElementById('shraadhForm');
+            const calculateBtn = document.getElementById('calculate-btn');
+            const resultsContainer = document.getElementById('results-container');
+
+            shraadhForm.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Prevent default form submission
+
+                const userName = document.getElementById('user-name').value;
+                const userPhone = document.getElementById('user-phone').value;
+                const userEmail = document.getElementById('user-email').value;
+                const dateOfDeath = document.getElementById('death-date').value;
+                const timeOfDeath = document.getElementById('death-time').value;
+                const placeOfDeath = document.getElementById('death-place').value;
+
+                if (!userName || !userPhone || !dateOfDeath || !timeOfDeath || !placeOfDeath) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+
+                calculateBtn.disabled = true;
+                calculateBtn.textContent = 'Fetching...';
+                resultsContainer.style.display = 'none';
+
+                try {
+                    // --- IMPORTANT: Replace with your deployed Flask app URL ---
+                    const backendUrl = 'http://127.0.0.1:5000/submit';
+
+                    const response = await fetch(backendUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({
+                            name: userName,
+                            phone: userPhone,
+                            email: userEmail,
+                            death_date: dateOfDeath,
+                            death_time: timeOfDeath,
+                            death_place: placeOfDeath
+                        })
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok.');
+                    }
+
+                    // Get the JSON data directly from your backend's response
+                    const data = await response.json();
+
+                    // Format the response into beautiful HTML to display the results
+                    let htmlResult = `
+        <h3>Suggested Shraadh Dates for 2025</h3>
+        <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithiName}</p>
+        <p><strong>Next Annual Shraadh Date and Time:</strong><br>${data.annualTithiDateTime}</p>
+        <p><strong>Corresponding Pitru Paksha Date:</strong></p>
+        <ul><li>${data.pitruPakshaDate}</li></ul>
+        <p class="disclaimer">These dates are calculated based on Vedic principles. It is always recommended to consult with a family priest for confirmation.</p>
+    
+                    <div id="place-selection">
+                                <h4>Where would you like to perform the Shraadh?</h4>
+                                <div class="checkbox-group">
+                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Varanasi"><span>Varanasi</span></label>
+                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Ayodhya"><span>Rameshwaram</span></label>
+                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Gaya"><span>Gaya</span></label>
+                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Haridwar"><span>Haridwar</span></label>
+                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Prayagraj"><span>Prayagraj</span></label>
+                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Kashi"><span>Kashi</span></label>
+                                </div>
+                                <button id="find-packages-btn" class="btn btn-primary btn-sm">Find Packages</button>
+                            </div>
+
+        `;
+
+                    resultsContainer.innerHTML = htmlResult;
+                    resultsContainer.style.display = 'block';
+
+                } catch (error) {
+                    resultsContainer.style.display = 'block';
+                    resultsContainer.innerHTML = '<p class="error-message">An error occurred. Please try again later.</p>';
+                    console.error('There was a problem:', error);
+                } finally {
+                    calculateBtn.disabled = false;
+                    calculateBtn.textContent = 'Submit';
+                }
+
+            }
+
+
+            );
+        });
+
+
+    </script>
+</body>
+
+</html>
