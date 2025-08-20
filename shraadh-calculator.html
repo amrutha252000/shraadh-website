@@ -206,7 +206,8 @@
             border-radius: 8px;
             text-align: center;
         }
-         /* .footer-bg::before {
+
+        /* .footer-bg::before {
             content: "";
             position: absolute;
             top: 0;
@@ -248,15 +249,74 @@
             color: #fff;
         } */
 
-      
-.checkbox-label .custom-checkbox {
-    font-family: 'Font Awesome 5 Free';
-    font-weight: 900;
-    margin-right: 8px; /* This adds the space you need */
-    color: #ccc;
-    transition: color 0.3s ease;
-}
 
+        /*  */
+
+        #place-selection {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+        }
+        .checkbox-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Two columns */
+            gap: 10px; /* Space between items */
+            margin-bottom: 20px;
+        }
+        .checkbox-label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            font-size: 1rem;
+            padding: 10px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        .checkbox-label:hover {
+            background-color: #f8f9fa;
+            border-color: var(--accent-color);
+        }
+        .checkbox-label input[type="checkbox"] {
+            display: none; /* Hide the default checkbox */
+        }
+        .checkbox-label .custom-checkbox {
+            font-family: 'Font Awesome 5 Free';
+            font-weight: 900;
+            margin-right: 10px;
+            color: #ccc;
+            transition: color 0.3s ease;
+        }
+        .checkbox-label .custom-checkbox::before {
+            content: '\f111'; /* fa-circle */
+        }
+        .checkbox-label input[type="checkbox"]:checked + .custom-checkbox::before {
+            content: '\f058'; /* fa-check-circle */
+            color: var(--accent-color);
+        }
+        .checkbox-label input[type="checkbox"]:checked ~ span {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        .checkbox-label input[type="checkbox"]:checked + .custom-checkbox {
+             color: var(--accent-color);
+        }
+        .checkbox-label.full-width {
+            grid-column: 1 / -1; /* Make an item span the full width */
+        }
+
+        .package-card {
+            background: #fff;
+            border: 1px solid #e9ecef;
+            border-radius: 12px;
+            margin-top: 20px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .package-card h5 {
+            color: var(--accent-color);
+        }
     </style>
 </head>
 
@@ -355,10 +415,11 @@
 
                                 <button type="submit" id="calculate-btn"> Submit</button>
 
-                                <div id="results-container">
+                                
+                            </form>
+                            <div id="results-container">
                                     <!-- Results will be injected here by JavaScript -->
                                 </div>
-                            </form>
                         </div>
                     </div>
                 </div>
@@ -366,85 +427,6 @@
         </div>
     </main>
 
-   <footer class="mt-5">
-        <div class="footer-area footer-padding footer-bg" data-background="assets/img/service/footer_bg.jpg">
-            <div class="container">
-                <div class="row d-flex justify-content-between">
-
-                    <!-- Main Footer Column (with new contact info) -->
-                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
-                        <div class="single-footer-caption mb-20">
-                            <div class="logo logo2">
-                                <a href="index.html">
-                                    <h2 style="font-size: 40px; color: #ffffff;">SHRAADH</h2>
-                                </a>
-                            </div>
-                            <div class="footer-pera">
-                                <p class="mt-4 mb-0">Your trusted partner for sacred journeys and ancestral rites,
-                                    providing guidance and support with the utmost care and respect. Let us take care of
-                                    Everything while you Focus on Honouring your Ancestors.</p>
-                            </div>
-                            <!-- New Contact Info Block -->
-                            <div class="footer-contact-info mt-4">
-                                <p><i class="fas fa-globe"></i><a href="http://shraadh.org" target="_blank"
-                                        rel="noopener noreferrer">shraadh.org</a></p>
-                                <p><i class="fas fa-envelope"></i><a
-                                        href="mailto:contact@shraadh.org">contact@shraadh.org</a></p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Navigation Column -->
-                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Navigate</h4>
-                                <ul>
-                                    <li><a href="index.html">Home</a></li>
-                                    <li><a href="blog.html">Details</a></li>
-                                    <li><a href="#contactForm">Contact Us</a></li>
-                                    <li><a href="#">Privacy Policy</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Services Column -->
-                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6">
-                        <div class="single-footer-caption mb-50">
-                            <div class="footer-tittle">
-                                <h4>Let us Help you</h4>
-                                <ul>
-                                    <li><a href="step_by_step_guide.html">Steps to perform Pind-Daan</a></li>
-                                    <li><a href="#">Our Priests</a></li>
-                                    <li><a href="#">Beyond Rituals</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Footer Bottom -->
-                <div class="row">
-                    <div class="col-xl-7 col-lg-7 col-md-7">
-                        <div class="footer-copy-right">
-                            <p>Copyright &copy;
-                                <script>document.write(new Date().getFullYear());</script> All rights reserved | Shraadh
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-xl-5 col-lg-5 col-md-5">
-                        <div class="footer-social f-right">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
-                            <a href="https://www.facebook.com/profile.php?id=100054528965996"><i
-                                    class="fab fa-facebook-f"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
 
 
 
@@ -463,96 +445,134 @@
     <script src="./assets/js/main.js"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const shraadhForm = document.getElementById('shraadhForm');
-            const calculateBtn = document.getElementById('calculate-btn');
-            const resultsContainer = document.getElementById('results-container');
+       
+        const shraadhForm = document.getElementById('shraadhForm');
+        const calculateBtn = document.getElementById('calculate-btn');
+        const resultsContainer = document.getElementById('results-container');
 
-            shraadhForm.addEventListener('submit', async (e) => {
-                e.preventDefault(); // Prevent default form submission
+        shraadhForm.addEventListener('submit', async (e) => {
+            e.preventDefault(); // Prevent default form submission
 
-                const userName = document.getElementById('user-name').value;
-                const userPhone = document.getElementById('user-phone').value;
-                const userEmail = document.getElementById('user-email').value;
-                const dateOfDeath = document.getElementById('death-date').value;
-                const timeOfDeath = document.getElementById('death-time').value;
-                const placeOfDeath = document.getElementById('death-place').value;
+            const userName = document.getElementById('user-name').value;
+            const userPhone = document.getElementById('user-phone').value;
+            const userEmail = document.getElementById('user-email').value;
+            const dateOfDeath = document.getElementById('death-date').value;
+            const timeOfDeath = document.getElementById('death-time').value;
+            const placeOfDeath = document.getElementById('death-place').value;
 
-                if (!userName || !userPhone || !dateOfDeath || !timeOfDeath || !placeOfDeath) {
-                    alert('Please fill in all required fields.');
-                    return;
-                }
-
-                calculateBtn.disabled = true;
-                calculateBtn.textContent = 'Fetching...';
-                resultsContainer.style.display = 'none';
-
-                try {
-                    // --- IMPORTANT: Replace with your deployed Flask app URL ---
-                    const backendUrl = 'http://127.0.0.1:5000/submit';
-
-                    const response = await fetch(backendUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({
-                            name: userName,
-                            phone: userPhone,
-                            email: userEmail,
-                            death_date: dateOfDeath,
-                            death_time: timeOfDeath,
-                            death_place: placeOfDeath
-                        })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Network response was not ok.');
-                    }
-
-                    // Get the JSON data directly from your backend's response
-                    const data = await response.json();
-
-                    // Format the response into beautiful HTML to display the results
-                    let htmlResult = `
-        <h3>Suggested Shraadh Dates for 2025</h3>
-        <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithiName}</p>
-        <p><strong>Next Annual Shraadh Date and Time:</strong><br>${data.annualTithiDateTime}</p>
-        <p><strong>Corresponding Pitru Paksha Date:</strong></p>
-        <ul><li>${data.pitruPakshaDate}</li></ul>
-        <p class="disclaimer">These dates are calculated based on Vedic principles. It is always recommended to consult with a family priest for confirmation.</p>
-    
-                    <div id="place-selection">
-                                <h4>Where would you like to perform the Shraadh?</h4>
-                                <div class="checkbox-group">
-                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Varanasi"><span>Varanasi</span></label>
-                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Ayodhya"><span>Rameshwaram</span></label>
-                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Gaya"><span>Gaya</span></label>
-                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Haridwar"><span>Haridwar</span></label>
-                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Prayagraj"><span>Prayagraj</span></label>
-                                    <label class="checkbox-label"><input type="checkbox" name="place" value="Kashi"><span>Kashi</span></label>
-                                </div>
-                                <button id="find-packages-btn" class="btn btn-primary btn-sm">Find Packages</button>
-                            </div>
-
-        `;
-
-                    resultsContainer.innerHTML = htmlResult;
-                    resultsContainer.style.display = 'block';
-
-                } catch (error) {
-                    resultsContainer.style.display = 'block';
-                    resultsContainer.innerHTML = '<p class="error-message">An error occurred. Please try again later.</p>';
-                    console.error('There was a problem:', error);
-                } finally {
-                    calculateBtn.disabled = false;
-                    calculateBtn.textContent = 'Submit';
-                }
-
+            if (!userName || !userPhone || !dateOfDeath || !timeOfDeath || !placeOfDeath) {
+                alert('Please fill in all required fields.');
+                return;
             }
 
+            calculateBtn.disabled = true;
+            calculateBtn.textContent = 'Fetching...';
+            resultsContainer.style.display = 'none';
 
-            );
+            try {
+                // --- IMPORTANT: Replace with your deployed Flask app URL ---
+                const backendUrl = 'https://shraadh-website-backend-akh6.onrender.com/submit';
+
+                const response = await fetch(backendUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: userName,
+                        phone: userPhone,
+                        email: userEmail,
+                        death_date: dateOfDeath,
+                        death_time: timeOfDeath,
+                        death_place: placeOfDeath
+                    })
+                });
+
+                if (!response.ok) {
+                    throw new Error('Network response was not ok.');
+                }
+
+                // Get the JSON data directly from your backend's response
+                const data = await response.json();
+
+                // Format the response into beautiful HTML to display the results
+                let htmlResult = `
+                    <h3>Suggested Shraadh Dates for 2025</h3>
+                    <p><strong>Annual Shraadh Tithi:</strong><br>${data.annualTithiName}</p>
+                    <p><strong>Next Annual Shraadh Date and Time:</strong><br>${data.annualTithiDateTime}</p>
+                    <p><strong>Corresponding Pitru Paksha Date:</strong><br>${data.pitruPakshaDate}</p>
+                    <p class="disclaimer">Please note: This is a simplified suggestion. For precise dates based on the Hindu lunar calendar (Panchang), we recommend consulting with a priest. Contact us for a detailed consultation.</p>
+    
+                    <div id="place-selection">
+                            <h4>Where would you like to perform the Shraadh?</h4>
+                            <div class="checkbox-group">
+                                <label class="checkbox-label"><input type="checkbox" name="place" value="Varanasi"><span>Varanasi</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="place" value="Ayodhya"><span>Ayodhya</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="place" value="Gaya"><span>Gaya</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="place" value="Prayagraj"><span>Prayagraj</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="place" value="Kashi"><span>Kashi</span></label>
+                            </div>
+                            <button id="find-packages-btn" class="btn btn-primary btn-sm" onclick="findPackagesBtnOnClick()">Find Packages</button>
+                            <hr>
+                        </div>
+                        <div id="package-recommendations" style=""></div>
+
+                    `;
+                resultsContainer.innerHTML = htmlResult;
+                resultsContainer.style.display = 'block';
+
+
+            } catch (error) {
+                resultsContainer.style.display = 'block';
+                resultsContainer.innerHTML = '<p class="error-message">An error occurred. Please try again later.</p>';
+                console.error('There was a problem:', error);
+            } finally {
+                calculateBtn.disabled = false;
+                calculateBtn.textContent = 'Submit';
+            }
+
         });
+       
 
+        function findPackagesBtnOnClick(){
+            //e.preventDefault();
+            const packageRecs = document.getElementById('package-recommendations');
+            const selectedPlaces = Array.from(document.querySelectorAll('input[name="place"]:checked')).map(cb => cb.value);
+            // Define all available packages
+            const allPackages = [
+                { id: 1, name: "3 Days at Gaya (Pitru Paksha Special)", locations: ["Gaya"] },
+                { id: 2, name: "2 Nights at Kashi and 2 Nights at Gaya - Pitru Moksha Yatra", locations: ["Kashi", "Gaya"] },
+                { id: 3, name: "1 Night at Ayodhya, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra", locations: ["Ayodhya", "Varanasi", "Gaya"] },
+                { id: 4, name: "1 Night Ayodhya, 1 Night Prayagraj, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra", locations: ["Ayodhya", "Prayagraj", "Varanasi", "Gaya"] }
+            ];
+
+            // console.log("Selected places:", selectedPlaces);
+            if (selectedPlaces.length === 0) {
+                alert("Please select at least one place.");
+                return;
+            }
+
+            // Find all packages that include AT LEAST ONE of the selected places
+            const recommendedPackages = allPackages.filter(pkg =>
+                selectedPlaces.some(place => pkg.locations.includes(place))
+            );
+
+            let packageHTML = '<h4>Recommended Packages</h4>';
+
+            if (recommendedPackages.length > 0) {
+                recommendedPackages.forEach(pkg => {
+                    packageHTML += `
+                            <div class="package-card">
+                                <h5>${pkg.name}</h5>
+                                <a href="index.html#contactForm">Inquire Now</a>
+                            </div>
+                        `;
+                });
+            } else {
+                packageHTML += '<p>No specific packages match your selection. Please contact us for a custom package.</p>';
+            }
+
+            packageRecs.innerHTML = packageHTML;
+            packageRecs.style.display = 'block';
+        };
 
     </script>
 </body>
