@@ -1,0 +1,447 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All Sacred Packages - Shraadh</title>
+    <meta name="description" content="Explore our curated pilgrimage packages for performing sacred ancestral rites.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Professional Styles -->
+    <style>
+        :root {
+            --primary-color: #1A2E44;
+            --accent-color: #C0A16E;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --background-light: #f8f9fa;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-light); line-height: 1.7; background-color: #fff; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; font-weight: 600; color: var(--primary-color); }
+        .main-menu ul li a:hover { color: var(--accent-color) !important; }
+        
+        .page-hero {
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(26, 46, 68, 0.8), rgba(26, 46, 68, 0.4));
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+        }
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .page-hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .package-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 25px rgba(26, 46, 68, 0.08);
+            transition: all 0.4s ease;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        .package-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(26, 46, 68, 0.15);
+        }
+        .package-card-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+        .package-card-body {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+        .package-card-title {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            flex-grow: 1;
+        }
+        .package-details {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 20px;
+            color: var(--text-light);
+        }
+        .package-details li {
+            margin-bottom: 8px;
+        }
+        .package-details .fas {
+            color: var(--accent-color);
+            margin-right: 10px;
+            width: 20px;
+        }
+        .package-card .btn-details {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+            text-align: center;
+        }
+        .package-card .btn-details:hover {
+            background-color: var(--accent-color);
+        }
+
+        .logo2 img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        ** Styling for Contact Info in Footer
+*/
+        .footer-contact-info p {
+            color: #a5a5a5;
+            /* A light grey that's easy to read on the dark background */
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+
+        .footer-contact-info p a {
+            color: #a5a5a5;
+            transition: color 0.3s ease;
+        }
+
+        .footer-contact-info p a:hover {
+            color: #fff;
+            /* Brightens on hover */
+            text-decoration: underline;
+        }
+
+        .footer-contact-info .fas {
+            color: var(--accent-color);
+            /* Uses your gold accent color for the icons */
+            margin-right: 10px;
+            width: 20px;
+            /* Ensures icons are aligned */
+        }
+
+        /*
+** Reduce the height of the footer
+*/
+        .footer-padding {
+            padding-top: 30px;
+            /* The original value is likely much larger */
+            padding-bottom: 10px;
+            /* The original value is likely much larger */
+        }
+
+
+    </style>
+</head>
+
+<body>
+   
+    <header>
+        <!-- Header Content -->
+        <div class="header-area">
+            <div class="main-header ">
+
+
+                <div class="header-top top-bg d-none d-lg-block">
+                    <div class="container">
+                        <div class="row justify-content-between align-items-center">
+                            <div class="col-lg-8">
+                                <div class="header-info-left">
+                                    <ul>
+                                        <li>contact@shraadh.com</li>
+                                        <li>+91 9570029090</li>
+                                        <li>Bengaluru</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="header-info-right f-right">
+                                    <ul class="header-social">
+                                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                        <li><a href="https://www.facebook.com/profile.php?id=100054528965996"><i
+                                                    class="fab fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fab fa-whatsapp"></i></a></li>
+                                        <!-- <li> <a href="#"><i class="fab fa-pinterest-p"></i></a></li> -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="header-bottom header-sticky">
+                    <div class="container">
+                        <div class="row align-items-center">
+                            <div class="col-xl-2 col-lg-2 col-md-1">
+                                <div class="logo logo2">
+                                    <a href="index.html"><img src="assets/img/logo3.jpg" alt=""></a>
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-10 col-md-10">
+                                <div class="main-menu f-right d-none d-lg-block">
+                                    <nav>
+                                        <ul id="navigation">
+                                            <li><a href="index.html">Home</a></li>
+                                             <li class="dropdown">
+                                                <a href="blog.html">Details</a>
+                                                <ul class="submenu">
+                                                    <li><a href="blog.html">All Posts <span class="count">(23)</span></a></li>
+                                                    <li><a href="ritual.html">Understanding the Ritual <span class="count">(7)</span></a></li>
+                                                    <li><a href="sacred.html">Sacred Places <span class="count">(14)</span></a></li>
+                                                    <li><a href="services.html">Our Services <span class="count">(3)</span></a></li>
+                                                </ul>
+                                            </li>
+                                            <!-- <li><a href="blog.html">Details</a></li> -->
+                                            <li><a href="shraadh-calculator.html">Calculator</a></li>
+                                            <li><a href="all-packages.html">Packages</a></li>
+                                            <li><a href="#contactForm">Contact Us</a></li>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="mobile_menu d-block d-lg-none"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Page Hero Section -->
+        <section class="page-hero" style="background-image: url('https://placehold.co/1920x800/2c3e50/ffffff?text=Our+Sacred+Packages');">
+            <div class="page-hero-content">
+                <h1>Our Sacred Pilgrimage Packages</h1>
+                <p>Thoughtfully curated journeys for remembrance and peace.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="content-area section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <!-- Package 1 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card">
+                            <div class="package-card-img">
+                                <img src="assets/img/symbolic offering.jpg" alt="Gaya Pilgrimage">
+                            </div>
+                            <div class="package-card-body">
+                                <h3 class="package-card-title">3 Days at Gaya (Pitru Paksha Special)</h3>
+                                <ul class="package-details">
+                                    <li><i class="fas fa-clock"></i>3 Days / 2 Nights</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Gaya</li>
+                                </ul>
+                                <a href="#" class="btn-details">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 2 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card">
+                            <div class="package-card-img">
+                                <img src="assets/img/pind daan guide.jpg" alt="Kashi and Gaya Yatra">
+                            </div>
+                            <div class="package-card-body">
+                                <h3 class="package-card-title">2 Nights at Kashi and 2 Nights at Gaya - Pitru Moksha Yatra</h3>
+                                <ul class="package-details">
+                                    <li><i class="fas fa-clock"></i>5 Days / 4 Nights</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Varanasi (Kashi), Gaya</li>
+                                </ul>
+                                <a href="#" class="btn-details">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 3 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card">
+                            <div class="package-card-img">
+                                <img src="assets/img/gaya.jpg" alt="Ayodhya, Varanasi, Gaya Yatra">
+                            </div>
+                            <div class="package-card-body">
+                                <h3 class="package-card-title">1 Night at Ayodhya, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra</h3>
+                                <ul class="package-details">
+                                     <li><i class="fas fa-clock"></i>6 Days / 5 Nights</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Ayodhya, Varanasi, Gaya</li>
+                                </ul>
+                                <a href="AVG.html" class="btn-details">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 4 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card">
+                            <div class="package-card-img">
+                                <img src="assets/img/varanasi.jpg" alt="Ayodhya, Prayagraj, Varanasi, Gaya Yatra">
+                            </div>
+                            <div class="package-card-body">
+                                <h3 class="package-card-title">1 Night Ayodhya, 1 Night Prayagraj, 2 Nights at Varanasi and Gaya</h3>
+                                <ul class="package-details">
+                                    <li><i class="fas fa-clock"></i>7 Days / 6 Nights</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Ayodhya, Prayagraj, Varanasi, Gaya</li>
+                                </ul>
+                                <a href="APVG.html" class="btn-details">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Package 5 -->
+                    <div class="col-lg-4 col-md-6">
+                        <div class="package-card">
+                            <div class="package-card-img">
+                                <img src="assets/img/badrinath.jpg" alt="Badrinath Pilgrimage">
+                            </div>
+                            <div class="package-card-body">
+                                <h3 class="package-card-title">2 Nights, 3 Days – Pind Daan at Badrinath Itinerary</h3>
+                                <ul class="package-details">
+                                    <li><i class="fas fa-clock"></i>3 Days / 2 Nights</li>
+                                    <li><i class="fas fa-map-marker-alt"></i>Badrinath (Excluding Haridwar)</li>
+                                </ul>
+                                <a href="AVG.html" class="btn-details">View Itinerary</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Paste your standard footer HTML here -->
+                 <div class="footer-area footer-padding footer-bg" data-background="assets/img/service/footer_bg.jpg">
+            <div class="container">
+                <div class="row d-flex justify-content-between">
+
+                    <!-- Main Footer Column (with new contact info) -->
+                    <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+                        <div class="single-footer-caption mb-20">
+                            <div class="logo logo2">
+                                <a href="index.html">
+                                    <h2 style="font-size: 40px; color: #ffffff;">SHRAADH</h2>
+                                </a>
+                            </div>
+                            <div class="footer-pera">
+                                <p class="mt-4 mb-0">Your trusted partner for sacred journeys and ancestral rites,
+                                    providing guidance and support with the utmost care and respect. Let us take care of
+                                    Everything while you Focus on Honouring your Ancestors.</p>
+                            </div>
+                            <!-- New Contact Info Block -->
+                            <div class="footer-contact-info mt-4">
+                                <p><i class="fas fa-globe"></i><a href="http://shraadh.org" target="_blank"
+                                        rel="noopener noreferrer">shraadh.org</a></p>
+                                <p><i class="fas fa-envelope"></i><a
+                                        href="mailto:contact@shraadh.org">contact@shraadh.org</a></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Navigation Column -->
+                    <div class="col-xl-2 col-lg-3 col-md-3 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Navigate</h4>
+                                <ul>
+                                    <li><a href="index.html">Home</a></li>
+                                    <li><a href="blog.html">Details</a></li>
+                                    <li><a href="#contactForm">Contact Us</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Services Column -->
+                    <div class="col-xl-3 col-lg-4 col-md-3 col-sm-6">
+                        <div class="single-footer-caption mb-50">
+                            <div class="footer-tittle">
+                                <h4>Let us Help you</h4>
+                                <ul>
+                                    <li><a href="step_by_step_guide.html">Steps to perform Pind-Daan</a></li>
+                                    <li><a href="#">Our Priests</a></li>
+                                    <li><a href="#">Beyond Rituals</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer Bottom -->
+                <div class="row">
+                    <div class="col-xl-7 col-lg-7 col-md-7">
+                        <div class="footer-copy-right">
+                            <p>Copyright &copy;
+                                <script>document.write(new Date().getFullYear());</script> All rights reserved | Shraadh
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-xl-5 col-lg-5 col-md-5">
+                        <div class="footer-social f-right">
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="https://www.facebook.com/profile.php?id=100054528965996"><i
+                                    class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/919570029090?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>

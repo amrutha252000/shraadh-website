@@ -1,0 +1,289 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Trip Summary - Shraadh</title>
+    <meta name="description" content="Trip summary for the Pitru Moksha Yatra, detailing the day-by-day itinerary.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Lora:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- CSS here -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="assets/css/slicknav.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <!-- Custom Professional Styles -->
+    <style>
+        :root {
+            --primary-color: #1A2E44;
+            --accent-color: #C0A16E;
+            --text-dark: #2c3e50;
+            --text-light: #576574;
+            --background-light: #f8f9fa;
+        }
+        body { font-family: 'Inter', sans-serif; color: var(--text-light); line-height: 1.7; background-color: #fff; }
+        h1, h2, h3, h4, h5, h6 { font-family: 'Lora', serif; font-weight: 600; color: var(--primary-color); }
+        .main-menu ul li a:hover { color: var(--accent-color) !important; }
+        
+        .page-hero {
+            height: 50vh;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .page-hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: linear-gradient(to top, rgba(26, 46, 68, 0.8), rgba(26, 46, 68, 0.4));
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            color: #fff;
+        }
+        .page-hero-content h1 {
+            font-size: 3.5rem;
+            color: #fff;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+        .page-hero-content p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 3px;
+            background-color: var(--accent-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -1.5px;
+        }
+        .timeline-container {
+            padding: 10px 40px;
+            position: relative;
+            background-color: inherit;
+            width: 50%;
+        }
+        .timeline-container.left {
+            left: 0;
+        }
+        .timeline-container.right {
+            left: 50%;
+        }
+        .timeline-container::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--accent-color);
+            top: 35px;
+            border-radius: 50%;
+            z-index: 1;
+        }
+        .right::after {
+            left: -10px;
+        }
+        .timeline-content {
+            padding: 20px 30px;
+            background-color: var(--background-light);
+            position: relative;
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+        }
+        .timeline-content h4 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+         .timeline-content p {
+            margin-bottom: 5px;
+        }
+        .timeline-content .fas {
+            margin-right: 8px;
+            color: var(--accent-color);
+        }
+
+        /* Responsive timeline */
+        @media screen and (max-width: 768px) {
+            .timeline::after {
+                left: 20px;
+            }
+            .timeline-container {
+                width: 100%;
+                padding-left: 60px;
+                padding-right: 15px;
+            }
+            .timeline-container.right {
+                left: 0%;
+            }
+            .timeline-container.left::after, .timeline-container.right::after {
+                left: 10px;
+            }
+        }
+        
+        .cta-button {
+            background-color: var(--accent-color);
+            color: #fff !important;
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .cta-button:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+
+        .back-to-packages-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: var(--text-light);
+            font-weight: 500;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .back-to-packages-link:hover {
+            color: var(--accent-color);
+            text-decoration: underline;
+        }
+        .back-to-packages-link .fas {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- Paste your standard header HTML here -->
+    </header>
+
+    <main>
+        <!-- Post Hero Section -->
+        <section class="page-hero" style="background-image: url('https://placehold.co/1920x800/2c3e50/ffffff?text=Trip+Summary');">
+            <div class="page-hero-content">
+                <h1>Trip Summary</h1>
+                <p>A day-by-day overview of your sacred journey.</p>
+            </div>
+        </section>
+
+        <!-- Main Content Area -->
+        <section class="content-area section-padding">
+            <div class="container">
+                <div class="timeline">
+
+                    <!-- Day 1 -->
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h4>September 5 - Friday</h4>
+                            <p>Day 1: Arrival in Ayodhya - Ram Janmabhoomi Darshan</p>
+                            <p>Check-in at Raghuvar Inn</p>
+                            <p><i class="fas fa-bed"></i>Overnight Stay: Ayodhya</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 2 -->
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h4>September 6 - Saturday</h4>
+                             <p><i class="fas fa-sign-out-alt"></i>Check-Out from Raghuvar Inn</p>
+                            <p><i class="fas fa-calendar-day"></i>Day 2: Ayodhya to Varanasi - Evening Ganga Aarti</p>
+                            <p><i class="fas fa-hotel"></i>Check-In at HHW Hotel Varanasi</p>
+                            <p><i class="fas fa-bed"></i>Overnight Stay: Varanasi</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 3 -->
+                    <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h4>September 7 - Sunday</h4>
+                            <p><i class="fas fa-calendar-day"></i>Day 4: Varanasi Temples & Ancestral Tarpan</p>
+                            <p><i class="fas fa-bed"></i>Overnight Stay: Varanasi</p>
+                        </div>
+                    </div>
+
+                    <!-- Day 4 -->
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h4>September 8 - Monday</h4>
+                            <p><i class="fas fa-sign-out-alt"></i>Check-out from HHW Hotel Varanasi</p>
+                            <p><i class="fas fa-calendar-day"></i>Day 5: Varanasi to Gaya - Vishnupad Temple Darshan</p>
+                            <p><i class="fas fa-hotel"></i>Check-in at Hotel Taj Darbar</p>
+                            <p><i class="fas fa-bed"></i>Overnight Stay: Gaya</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 5 -->
+                     <div class="timeline-container left">
+                        <div class="timeline-content">
+                            <h4>September 9 - Tuesday</h4>
+                            <p><i class="fas fa-calendar-day"></i>Day 6: Gaya - Main Pind Daan Ceremony & Ritual Sites</p>
+                            <p><i class="fas fa-bed"></i>Overnight Stay: Gaya</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Day 6 -->
+                    <div class="timeline-container right">
+                        <div class="timeline-content">
+                            <h4>September 10 - Wednesday</h4>
+                             <p><i class="fas fa-sign-out-alt"></i>Check out from Hotel Taj Darbar</p>
+                            <p><i class="fas fa-calendar-day"></i>Day 7: Bodh Gaya Visit (Optional) - Departure</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="text-center mt-5">
+                    <!-- <a href="index.html#contactForm" class="cta-button">Book This Tour</a><br> -->
+                    <a href="all-packages.html" class="back-to-packages-link"><i class="fas fa-arrow-left"></i> Back to All Packages</a>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <!-- Paste your standard footer HTML here -->
+    </footer>
+
+    <!-- WhatsApp Floating Icon -->
+    <a href="https://wa.me/919570029090?text=I'm%20interested%20in%20your%20services" class="whatsapp-float" target="_blank" rel="noopener noreferrer">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JS here -->
+    <script src="./assets/js/vendor/jquery-1.12.4.min.js"></script>
+    <script src="./assets/js/popper.min.js"></script>
+    <script src="./assets/js/bootstrap.min.js"></script>
+    <script src="./assets/js/jquery.slicknav.min.js"></script>
+    <script src="./assets/js/plugins.js"></script>
+    <script src="./assets/js/main.js"></script>
+</body>
+</html>
+
