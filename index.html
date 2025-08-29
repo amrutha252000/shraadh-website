@@ -634,6 +634,29 @@
             color: var(--text-light);
             font-size: 14px;
         }
+
+        /* WhatsApp Icon */
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 25px; right: 25px; background-color: #25D366; color: #FFF; border-radius: 50px; text-align: center; font-size: 30px; box-shadow: 2px 2px 10px rgba(0,0,0,0.2); z-index: 1000; display: flex; justify-content: center; align-items: center; transition: transform 0.3s ease; cursor: pointer; }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        
+        /* WhatsApp Modal Styles */
+        .whatsapp-modal .modal-content { border-radius: 12px; border: none; }
+        .whatsapp-modal .modal-header { background-color: var(--primary-color); color: #fff; border-bottom: none; border-radius: 12px 12px 0 0; }
+        .whatsapp-modal .modal-header .close { color: #fff; opacity: 0.9; }
+        /* .whatsapp-modal .modal-title { font-family: 'Lora', serif; } */
+        .whatsapp-modal .modal-title { 
+            font-family: 'Lora', serif;
+            color: #fff; /* Make title text white */
+        }
+        .whatsapp-modal .modal-body { padding: 30px; }
+        .whatsapp-modal .package-list label { display: block; background-color: #f8f9fa; padding: 15px; border-radius: 8px; margin-bottom: 10px; cursor: pointer; transition: all 0.3s ease; border: 1px solid #e9ecef; }
+        .whatsapp-modal .package-list label:hover { border-color: var(--accent-color); }
+        .whatsapp-modal .package-list input[type="checkbox"] { display: none; }
+        .whatsapp-modal .package-list input[type="checkbox"]:checked + span { font-weight: 600; color: var(--primary-color); }
+        .whatsapp-modal .package-list input[type="checkbox"]:checked + span::before { content: '\f058'; color: var(--accent-color); }
+        .whatsapp-modal .package-list span::before { content: '\f111'; font-family: 'Font Awesome 5 Free'; font-weight: 900; margin-right: 10px; color: #ccc; }
+        .whatsapp-modal .btn-whatsapp { background-color: #25D366; color: white; width: 100%; padding: 15px; font-weight: 700; font-size: 16px; }
+        .whatsapp-modal .btn-whatsapp:hover { background-color: #128C7E; }
     </style>
 </head>
 
@@ -700,6 +723,7 @@
                                             </li>
                                             <!-- <li><a href="blog.html">Details</a></li> -->
                                             <li><a href="shraadh-calculator.html">Calculator</a></li>
+                                            <li><a href="all-packages.html">Packages</a></li>
                                             <li><a href="#contactForm">Contact Us</a></li>
                                         </ul>
                                     </nav>
@@ -1460,10 +1484,55 @@
     </footer>
 
     <!-- WhatsApp Floating Icon -->
-    <a href="https://wa.me/919570029090?text=I'm%20interested%20in%20your%20services" class="whatsapp-float"
+    <!-- <a href="https://wa.me/919570029090?text=I'm%20interested%20in%20your%20services" class="whatsapp-float"
         target="_blank" rel="noopener noreferrer">
         <i class="fab fa-whatsapp"></i>
-    </a>
+    </a> -->
+
+        <!-- MODIFIED WhatsApp Floating Icon -->
+    <div class="whatsapp-float" data-toggle="modal" data-target="#whatsappPackageModal">
+        <i class="fab fa-whatsapp"></i>
+    </div>
+
+    <!-- NEW WhatsApp Package Selection Modal -->
+    <div class="modal fade whatsapp-modal" id="whatsappPackageModal" tabindex="-1" role="dialog" aria-labelledby="whatsappModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="whatsappModalLabel">Inquire About Our Packages</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Please select the package(s) you are interested in:</p>
+                    <div class="package-list">
+                        <label>
+                            <input type="checkbox" name="package" value="3 Days at Gaya (Pitru Paksha Special)">
+                            <span>3 Days at Gaya (Pitru Paksha Special)</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="package" value="2 Nights at Kashi and 2 Nights at Gaya">
+                            <span>2 Nights at Kashi and 2 Nights at Gaya</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="package" value="1 Night at Ayodhya, 2 Nights at Varanasi and Gaya">
+                            <span>1 Night at Ayodhya, 2 Nights at Varanasi and Gaya</span>
+                        </label>
+                        <label>
+                            <input type="checkbox" name="package" value="1 Night Ayodhya, 1 Night Prayagraj, 2 Nights at Varanasi and Gaya">
+                            <span>1 Night Ayodhya, 1 Night Prayagraj, 2 Nights at Varanasi and Gaya</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="send-whatsapp-btn" class="btn btn-whatsapp">
+                        <i class="fab fa-whatsapp mr-2"></i>Chat on WhatsApp
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Modal HTMLs (Gaya, Varanasi, Haridwar) remain the same -->
     <div class="modal fade" id="gayaDetailsModal" tabindex="-1" role="dialog" aria-labelledby="gayaDetailsModalLabel"
@@ -1684,7 +1753,38 @@
     </script>
 
 
-
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sendWhatsAppBtn = document.getElementById('send-whatsapp-btn');
+            
+            sendWhatsAppBtn.addEventListener('click', () => {
+                // IMPORTANT: Replace with your actual phone number in international format
+                const phoneNumber = '919570029090'; 
+                
+                // Get all selected packages
+                const selectedPackages = document.querySelectorAll('input[name="package"]:checked');
+                
+                let message = "Hello, I'm interested in the following package(s):\n";
+                
+                if (selectedPackages.length > 0) {
+                    selectedPackages.forEach(pkg => {
+                        message += `- ${pkg.value}\n`;
+                    });
+                } else {
+                    message = "Hello, I'd like to inquire about your services.";
+                }
+                
+                // URL-encode the message
+                const encodedMessage = encodeURIComponent(message);
+                
+                // Create the final WhatsApp URL
+                const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+                
+                // Open the URL in a new tab
+                window.open(whatsappUrl, '_blank');
+            });
+        });
+    </script>
 
 
 

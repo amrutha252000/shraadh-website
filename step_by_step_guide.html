@@ -167,6 +167,77 @@
         .back-to-blog-link { display: inline-block; margin-bottom: 1.5rem; color: var(--text-light); font-weight: 600; text-decoration: none; transition: all 0.3s ease; }
         .back-to-blog-link:hover { color: var(--accent-color); transform: translateX(-5px); }
         .back-to-blog-link .fas { margin-right: 8px; }
+        
+        /* NEW ELEGANT PACKAGE RECOMMENDATIONS DESIGN */
+        .package-recommendations {
+            margin-top: 4rem;
+            padding-top: 3rem;
+            border-top: 1px solid #e9ecef;
+        }
+        .package-item {
+            background-color: var(--background-light);
+            border: 1px solid #e9ecef;
+            border-left: 5px solid var(--accent-color);
+            border-radius: 8px;
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: all 0.3s ease;
+        }
+        .package-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.07);
+            border-color: var(--accent-color);
+        }
+        .package-item-content {
+            flex-grow: 1;
+        }
+        .package-item-content h5 {
+            color: var(--primary-color);
+            font-size: 1.3rem;
+            margin: 0;
+        }
+        .package-item .btn {
+            background-color: var(--primary-color);
+            color: #fff !important;
+            border-radius: 50px;
+            padding: 14px 25px;
+            text-decoration: none;
+            white-space: nowrap; /* Prevent button text from wrapping */
+            margin-left: 20px;
+        }
+        .package-item .btn:hover {
+            background: var(--accent-color) !important;
+        }
+
+        .blog-sidebar .popular-post {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .blog-sidebar .popular-post-img img {
+            width: 70px;
+            height: 70px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-right: 15px;
+        }
+
+        .blog-sidebar .popular-post-info h5 a {
+            color: var(--primary-color);
+            font-size: 1rem;
+            line-height: 1.4;
+            font-weight: 600;
+        }
+
+        .blog-sidebar .popular-post-info span {
+            font-size: 13px;
+            color: #999;
+        }
+
     </style>
 </head>
 
@@ -201,9 +272,6 @@
                             
                             <h2>What You Can Expect:</h2>
                             
-                            <!-- =============================================== -->
-                            <!-- UPDATED AND RESTRUCTURED LIST -->
-                            <!-- =============================================== -->
                             <ul>
                                 <li><b>Tailored to Your Belief & Interest:</b> Whether you want to perform Shraadh at the confluence of Prayagraj, amidst the architectural depth of Gaya, or beneath the Akshayavat at Varanasi, we guide you to the right location.</li>
                                 <li>
@@ -212,20 +280,60 @@
                                         <li><b>Spiritual Sojourn:</b> including sacred rivers, temples, and meditative spaces</li>
                                         <li><b>Architectural Pilgrimage:</b> encompassing Kashi's ghats, Badrinath’s temple carvings</li>
                                         <li><b>Adventure + Ritual:</b> which entails forest walks in Gokarna, coastal serenity in Rameshwaram</li>
-                                        <p class="mt-3"><em>(You can even combine two or all three, it’s entirely up to your family’s rhythm.)</em></p>
                                     </ul>
-                                    
+                                    <p class="mt-3"><em>(You can even combine two or all three, it’s entirely up to your family’s rhythm.)</em></p>
                                 </li>
                                 <li><b>Personalised Food & Stay:</b> From sattvik thalis to region-specific offerings, and from guesthouses to homestays, we take care of it all.</li>
                                 <li><b>Multilingual Priests and Full Ritual Support:</b> Whether you’re Tamil, Telugu, Bengali, Marwari, or Maharashtrian, we assign knowledgeable priests aligned with your customs.</li>
                             </ul>
-                            <!-- =============================================== -->
 
-                            <img src="https://placehold.co/800x450/55efc4/000000?text=A+Sacred+Journey" alt="A serene pilgrimage path" class="img-fluid">
+                            <img src="assets/img/sacred rituals.jpg" alt="A serene pilgrimage path" class="img-fluid">
 
                             <h2>A Ritual Beyond the Checklist</h2>
                             <p>This isn’t just a ritual. It’s a story you’re completing, a prayer you’re offering, and a journey you’ll remember. We walk with you from the moment you decide to do the ritual until the last offering is made.</p>
-
+                            
+                            <!-- NEW PACKAGE RECOMMENDATIONS SECTION -->
+                            <div class="package-recommendations">
+                                <h2 class="text-center">Our Package Recommendations</h2>
+                                <div class="package-list-container mt-4">
+                                    <!-- Package 1 -->
+                                    <div class="package-item">
+                                        <div class="package-item-content">
+                                            <h5>3 Days at Gaya </h5><br><h5>Pitru Paksha Special</h5>
+                                        </div>
+                                        <a href="index.html#contactForm" class="btn">Know More</a>
+                                    </div>
+                                    <!-- Package 2 -->
+                                    <div class="package-item">
+                                        <div class="package-item-content">
+                                            <h5>2 Nights at Kashi and 2 Nights at Gaya</h5><br><h5>Pitru Paksha Special</h5>
+                                        </div>
+                                        <a href="index.html#contactForm" class="btn">Know More</a>
+                                    </div>
+                                    <!-- Package 3 -->
+                                    <div class="package-item">
+                                        <div class="package-item-content">
+                                            <h5>1 Night at Ayodhya, 2 Nights at Varanasi and Gaya</h5><br><h5>Pitru Moksha Yatra</h5>
+                                        </div>
+                                        <a href="AVG.html" class="btn">Know More</a>
+                                    </div>
+                                    <!-- Package 4 -->
+                                    <div class="package-item">
+                                        <div class="package-item-content">
+                                            <h5>1N Ayodhya, 1N Prayagraj, 2N's at Varanasi and Gaya</h5><br><h5>Pitru Moksha Yatra</h5>
+                                        </div>
+                                        <a href="index.html#contactForm" class="btn">Know More</a>
+                                    </div>
+                                    <!-- Package 5 -->
+                                    <div class="package-item">
+                                        <div class="package-item-content">
+                                            <h5>2 Nights, 3 Days – Pind Daan at Badrinath</h5><br><h5>Excluding Haridwar</h5>
+                                        </div>
+                                        <a href="index.html#contactForm" class="btn">Know More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            
                             <!-- Call-to-Action Section -->
                             <div class="cta-section">
                                 <h3>Ready to begin?</h3>
@@ -249,9 +357,30 @@
                                     <li><a href="#">Our Services <span class="float-right">(3)</span></a></li>
                                 </ul>
                             </div>
+                            
                             <div class="widget">
                                 <h4 class="widget-title">Popular Posts</h4>
-                                <!-- Popular posts content here -->
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="pindDaan_blog.html"><img src="assets/img/pind_daan_guide.jpg" alt=""></a></div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="pindDaan_blog.html">What Is Pind Daan? A Simple, Soulful Guide</a></h5>
+                                        <span>July 11, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="NRIs_blog.html"><img src="assets/img/NRI offering.jpg" alt=""></a></div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="NRIs_blog.html">Ancestral Rites for NRIs: Keeping Traditions Alive</a></h5>
+                                        <span>July 07, 2025</span>
+                                    </div>
+                                </div>
+                                <div class="popular-post">
+                                    <div class="popular-post-img"><a href="#"><img src="assets/img/gaya.jpg" alt=""></a></div>
+                                    <div class="popular-post-info">
+                                        <h5><a href="#">Why Gaya Is Considered the Holiest Place for Pind Daan</a></h5>
+                                        <span>July 08, 2025</span>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -279,3 +408,4 @@
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
+

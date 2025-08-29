@@ -2,6 +2,16 @@
 <html class="no-js" lang="zxx">
 
 <head>
+     <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-P9PXGLS7');</script>
+    <!-- End Google Tag Manager -->
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <title>Shraadh Suggestion Tool</title>
@@ -321,6 +331,10 @@
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-P9PXGLS7" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <header>
         <!-- Header Content -->
         <div class="header-area">
@@ -352,6 +366,7 @@
                                                 </ul>
                                             </li>
                                             <li><a href="shraadh-calculator.html">Calculator</a></li>
+                                            <li><a href="all-packages.html">Packages</a></li>
                                             <li><a href="index.html#contactForm">Contact Us</a></li>
                                         </ul>
                                     </nav>
@@ -410,7 +425,7 @@
 
                                 <div class="form-group">
                                     <label for="death-place">Place of Passing</label>
-                                    <input type="text" id="death-place" placeholder="e.g., Varanasi, India" required>
+                                    <input type="text" id="death-place" placeholder="e.g., Kashi, India" required>
                                 </div>
 
                                 <button type="submit" id="calculate-btn"> Submit</button>
@@ -504,11 +519,10 @@
                     <div id="place-selection">
                             <h4>Where would you like to perform the Shraadh?</h4>
                             <div class="checkbox-group">
-                                <label class="checkbox-label"><input type="checkbox" name="place" value="Varanasi"><span>Varanasi</span></label>
-                                <label class="checkbox-label"><input type="checkbox" name="place" value="Ayodhya"><span>Ayodhya</span></label>
                                 <label class="checkbox-label"><input type="checkbox" name="place" value="Gaya"><span>Gaya</span></label>
                                 <label class="checkbox-label"><input type="checkbox" name="place" value="Prayagraj"><span>Prayagraj</span></label>
                                 <label class="checkbox-label"><input type="checkbox" name="place" value="Kashi"><span>Kashi</span></label>
+                                <label class="checkbox-label"><input type="checkbox" name="place" value="Badrinath"><span>Badrinath</span></label>
                             </div>
                             <button id="find-packages-btn" class="btn btn-primary btn-sm" onclick="findPackagesBtnOnClick()">Find Packages</button>
                             <hr>
@@ -538,11 +552,13 @@
             const selectedPlaces = Array.from(document.querySelectorAll('input[name="place"]:checked')).map(cb => cb.value);
             // Define all available packages
             const allPackages = [
-                { id: 1, name: "3 Days at Gaya (Pitru Paksha Special)", locations: ["Gaya"] },
+                { id: 1, name: "Pind Daan at Gaya – 3Days (Pitru Paksha Special)", locations: ["Gaya"] },
                 { id: 2, name: "2 Nights at Kashi and 2 Nights at Gaya - Pitru Moksha Yatra", locations: ["Kashi", "Gaya"] },
-                { id: 3, name: "1 Night at Ayodhya, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra", locations: ["Ayodhya", "Varanasi", "Gaya"] },
-                { id: 4, name: "1 Night Ayodhya, 1 Night Prayagraj, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra", locations: ["Ayodhya", "Prayagraj", "Varanasi", "Gaya"] }
-            ];
+                { id: 3, name: "1 Night at Ayodhya, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra", locations: ["Kashi", "Gaya"] },
+                { id: 4, name: "1 Night Ayodhya, 1 Night Prayagraj, 2 Nights at Varanasi and Gaya - Pitru Moksha Yatra", locations: ["Prayagraj", "Kashi", "Gaya"] },
+                { id: 5, name: "2 Nights, 3 Days – Pind Daan at Badrinath Itinerary, Excluding Haridwar", locations: ["Badrinath"] }
+            ];  
+ 
 
             // console.log("Selected places:", selectedPlaces);
             if (selectedPlaces.length === 0) {
