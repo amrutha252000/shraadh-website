@@ -4,8 +4,8 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Trip Summary - Shraadh</title>
-    <meta name="description" content="Trip summary for the Pitru Moksha Yatra, detailing the day-by-day itinerary.">
+    <title>Pitru Moksha Yatra (Ayodhya, Varanasi, Gaya) - Shraadh</title>
+    <meta name="description" content="Detailed itinerary for the 6-day Pitru Moksha Yatra to Ayodhya, Varanasi, and Gaya.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
 
@@ -64,85 +64,73 @@
             color: rgba(255, 255, 255, 0.9);
         }
 
-        .timeline {
-            position: relative;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 40px 0;
-        }
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background-color: var(--accent-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1.5px;
-        }
-        .timeline-container {
-            padding: 10px 40px;
-            position: relative;
-            background-color: inherit;
-            width: 50%;
-        }
-        .timeline-container.left {
-            left: 0;
-        }
-        .timeline-container.right {
-            left: 50%;
-        }
-        .timeline-container::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: white;
-            border: 4px solid var(--accent-color);
-            top: 35px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        .right::after {
-            left: -10px;
-        }
-        .timeline-content {
-            padding: 20px 30px;
-            background-color: var(--background-light);
-            position: relative;
+        .pricing-table {
+            border: 1px solid #dee2e6;
             border-radius: 8px;
-            border: 1px solid #e9ecef;
+            overflow: hidden;
         }
-        .timeline-content h4 {
-            color: var(--primary-color);
-            font-size: 1.5rem;
-            margin-bottom: 5px;
+        .pricing-table th, .pricing-table td {
+            text-align: center;
+            vertical-align: middle;
         }
-         .timeline-content p {
-            margin-bottom: 5px;
+        .pricing-table thead th {
+            background-color: var(--primary-color);
+            color: #fff;
         }
-        .timeline-content .fas {
-            margin-right: 8px;
-            color: var(--accent-color);
+        .pricing-table tbody tr:nth-child(odd) {
+            background-color: var(--background-light);
         }
 
-        /* Responsive timeline */
-        @media screen and (max-width: 768px) {
-            .timeline::after {
-                left: 20px;
-            }
-            .timeline-container {
-                width: 100%;
-                padding-left: 60px;
-                padding-right: 15px;
-            }
-            .timeline-container.right {
-                left: 0%;
-            }
-            .timeline-container.left::after, .timeline-container.right::after {
-                left: 10px;
-            }
+        .inclusion-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        .inclusion-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        .inclusion-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            font-size: 1.2rem;
+        }
+        .inclusions i { color: #2ecc71; }
+        .exclusions i { color: #e74c3c; }
+
+        .itinerary-timeline .day-block {
+            position: relative;
+            padding: 2rem 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .itinerary-timeline .day-number {
+            background-color: var(--primary-color);
+            color: #fff;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-family: 'Lora', serif;
+            margin-bottom: 1rem;
+        }
+        .itinerary-timeline h3 {
+            color: var(--accent-color);
+        }
+        .itinerary-timeline img {
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .itinerary-timeline ul {
+            list-style-type: '🕉';
+            padding-left: 1.5rem;
+        }
+        .itinerary-timeline ul li {
+            padding-left: 10px;
+            margin-bottom: 10px;
         }
         
         .cta-button {
@@ -160,7 +148,6 @@
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
-
         .back-to-packages-link {
             display: inline-block;
             margin-top: 20px;
@@ -186,81 +173,195 @@
 
     <main>
         <!-- Post Hero Section -->
-        <section class="page-hero" style="background-image: url('https://placehold.co/1920x800/2c3e50/ffffff?text=Trip+Summary');">
+        <section class="page-hero" style="background-image: url('https://placehold.co/1920x800/f39c12/ffffff?text=Ayodhya+Yatra');">
             <div class="page-hero-content">
-                <h1>Trip Summary</h1>
-                <p>A day-by-day overview of your sacred journey.</p>
+                <h1>Pitru Moksha Yatra 2025</h1>
+                <p>1 Night Ayodhya, 2 Nights Varanasi & Gaya</p>
+                <p><strong><i class="far fa-calendar-alt mr-2"></i>Sep 5, 2025 - Sep 10, 2025</strong></p>
             </div>
         </section>
 
         <!-- Main Content Area -->
         <section class="content-area section-padding">
             <div class="container">
-                <div class="timeline">
+                
+                <!-- Pricing Section -->
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-10">
+                        <div class="section-tittle text-center">
+                            <h2>Tour Pricing</h2>
+                        </div>
+                        <div class="pricing-table mt-4">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>No. of People</th>
+                                        <th>Mode of Transportation</th>
+                                        <th>Price Per Person</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>02</td><td>Sedan Car</td><td>Rs 27,300/-</td></tr>
+                                    <tr><td>04</td><td>Ertiga</td><td>Rs 22,100/-</td></tr>
+                                    <tr><td>04</td><td>Crysta</td><td>Rs 24,000/-</td></tr>
+                                    <tr><td>06</td><td>Tempo Traveller</td><td>Rs 22,650/-</td></tr>
+                                    <tr><td>08</td><td>Tempo Traveller</td><td>Rs 20,400/-</td></tr>
+                                    <tr><td>10</td><td>Tempo Traveller</td><td>Rs 19,100/-</td></tr>
+                                    <tr><td colspan="2"><strong>Single Room Supplement</strong></td><td>Rs 11,000/-</td></tr>
+                                    <tr><td colspan="2"><strong>Extra Bed (5-12 YRS)</strong></td><td>Rs 11,260/-</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Inclusions & Exclusions -->
+                <div class="row mb-5">
+                    <div class="col-lg-6 inclusion-list inclusions">
+                        <h3><i class="fas fa-check-circle mr-2"></i>Inclusions</h3>
+                        <ul>
+                           <li><i class="fas fa-check"></i>Transportation</li>
+                            <li><i class="fas fa-check"></i>Accommodation</li>
+                            <li><i class="fas fa-check"></i>Meal As Depend on Selected Property</li>
+                            <li><i class="fas fa-check"></i>Driver Day Bata</li>
+                            <li><i class="fas fa-check"></i>Fuel, Toll And Parking</li>
+                            <li><i class="fas fa-check"></i>5 Dinner & 5 Breakfast Included in the hotel.</li>
+                            <li><i class="fas fa-check"></i>1 Liter Mineral water bottle per day per person.</li>
+                            <li><i class="fas fa-check"></i>1 Time Rickshaw at Ayodhya</li>
+                            <li><i class="fas fa-check"></i>1 Time Boat at Varanasi.</li>
+                            <li><i class="fas fa-check"></i>Sugam Darshan Ticket for Vishwanath temple.</li>
+                            <li><i class="fas fa-check"></i>Rickshaw only on Sightseeing tour of Bodhgaya.</li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-6 inclusion-list exclusions">
+                        <h3><i class="fas fa-times-circle mr-2"></i>Exclusions</h3>
+                        <ul>
+                            <li><i class="fas fa-times"></i>Flight Ticket</li>
+                            <li><i class="fas fa-times"></i>Train Ticket</li>
+                            <li><i class="fas fa-times"></i>Personal Expenses</li>
+                            <li><i class="fas fa-times"></i>Anything Not Mentioned in Inclusions</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+
+                <!-- Detailed Itinerary -->
+                <div class="itinerary-timeline mt-5">
+                    <div class="section-tittle text-center mb-5">
+                        <h2>Detailed Itinerary</h2>
+                    </div>
 
                     <!-- Day 1 -->
-                    <div class="timeline-container left">
-                        <div class="timeline-content">
-                            <h4>September 5 - Friday</h4>
-                            <p>Day 1: Arrival in Ayodhya - Ram Janmabhoomi Darshan</p>
-                            <p>Check-in at Raghuvar Inn</p>
-                            <p><i class="fas fa-bed"></i>Overnight Stay: Ayodhya</p>
+                    <div class="day-block row">
+                        <div class="col-md-2 text-center"><div class="day-number mx-auto">Day 1</div></div>
+                        <div class="col-md-5">
+                            <h3>Arrival in Ayodhya - Ram Janmabhoomi Darshan</h3>
+                            <p>Arrival at Ayodhya by train or flight. Meet & transfer to hotel. Check-in and freshen up. Visit the sacred sites.</p>
+                            <ul>
+                                <li><b>Shri Ram Janmabhoomi Temple</b></li>
+                                <li><b>Hanuman Garhi</b></li>
+                                <li><b>Kanak Bhawan</b></li>
+                                <li><b>Saryu Ghat</b> for evening aarti.</li>
+                            </ul>
+                            <p><b>Overnight Stay:</b> Ayodhya (Hotel Raghuvar Inn)</p>
+                        </div>
+                        <div class="col-md-5 d-flex align-items-center">
+                            <img src="assets/img/lord_ram.jpg" class="img-fluid" alt="Ayodhya Temple">
                         </div>
                     </div>
 
                     <!-- Day 2 -->
-                    <div class="timeline-container right">
-                        <div class="timeline-content">
-                            <h4>September 6 - Saturday</h4>
-                             <p><i class="fas fa-sign-out-alt"></i>Check-Out from Raghuvar Inn</p>
-                            <p><i class="fas fa-calendar-day"></i>Day 2: Ayodhya to Varanasi - Evening Ganga Aarti</p>
-                            <p><i class="fas fa-hotel"></i>Check-In at HHW Hotel Varanasi</p>
-                            <p><i class="fas fa-bed"></i>Overnight Stay: Varanasi</p>
+                    <div class="day-block row">
+                         <div class="col-md-2 text-center"><div class="day-number mx-auto">Day 2</div></div>
+                        <div class="col-md-5">
+                            <h3>Ayodhya to Varanasi - Evening Ganga Aarti</h3>
+                            <p>After breakfast, check out and proceed to Varanasi (approx. 5-6 hours by road). On arrival, check-in at hotel near temple/ghat area.</p>
+                            <ul>
+                                <li><b>Dashashwamedh Ghat Ganga Aarti:</b> A spectacular fire ritual.</li>
+                                <li><b>Optional Boat Ride:</b> Witness the sacred ghats from the river at sunset.</li>
+                            </ul>
+                             <p><b>Overnight Stay:</b> Varanasi (HHW Hotel Varanasi)</p>
+                        </div>
+                         <div class="col-md-5 d-flex align-items-center">
+                            <img src="assets/img/varanasi.jpg" class="img-fluid" alt="Ganga Aarti in Varanasi">
                         </div>
                     </div>
-
+                    
                     <!-- Day 3 -->
-                    <div class="timeline-container left">
-                        <div class="timeline-content">
-                            <h4>September 7 - Sunday</h4>
-                            <p><i class="fas fa-calendar-day"></i>Day 4: Varanasi Temples & Ancestral Tarpan</p>
-                            <p><i class="fas fa-bed"></i>Overnight Stay: Varanasi</p>
+                    <div class="day-block row">
+                        <div class="col-md-2 text-center"><div class="day-number mx-auto">Day 3</div></div>
+                        <div class="col-md-5">
+                             <h3>Varanasi Temples & Ancestral Tarpan</h3>
+                            <p>Morning temple visits and rituals.</p>
+                            <ul>
+                                <li><b>Kashi Vishwanath Jyotirlinga</b></li>
+                                <li><b>Annapurna Devi & other major temples.</b></li>
+                                <li><b>Tarpan Ritual:</b> Holy dip and offerings for ancestors at the Ganga ghats.</li>
+                            </ul>
+                            <p><b>Overnight Stay:</b> Varanasi</p>
+                        </div>
+                         <div class="col-md-5 d-flex align-items-center">
+                             <img src="assets/img/shrdh and pind daan.jpg" class="img-fluid" alt="Kashi Vishwanath Temple">
                         </div>
                     </div>
 
                     <!-- Day 4 -->
-                    <div class="timeline-container right">
-                        <div class="timeline-content">
-                            <h4>September 8 - Monday</h4>
-                            <p><i class="fas fa-sign-out-alt"></i>Check-out from HHW Hotel Varanasi</p>
-                            <p><i class="fas fa-calendar-day"></i>Day 5: Varanasi to Gaya - Vishnupad Temple Darshan</p>
-                            <p><i class="fas fa-hotel"></i>Check-in at Hotel Taj Darbar</p>
-                            <p><i class="fas fa-bed"></i>Overnight Stay: Gaya</p>
+                    <div class="day-block row">
+                        <div class="col-md-2 text-center"><div class="day-number mx-auto">Day 4</div></div>
+                        <div class="col-md-5">
+                            <h3>Varanasi to Gaya - Vishnupad Temple Darshan</h3>
+                            <p>Check out after breakfast and proceed to Gaya (approx. 6 hrs drive). Arrival & check-in at hotel.</p>
+                            <ul>
+                                <li><b>Vishnupad Temple:</b> Visit the central site for Pind Daan rituals.</li>
+                                <li><b>Evening Ritual Planning:</b> Light a lamp and meet the appointed purohit.</li>
+                            </ul>
+                            <p><b>Overnight Stay:</b> Gaya (Hotel Taj Darbar)</p>
+                        </div>
+                         <div class="col-md-5 d-flex align-items-center">
+                           <img src="assets/img/Vishnupad_Temple.jpg" class="img-fluid" alt="Vishnupad Temple in Gaya">
                         </div>
                     </div>
-                    
+
                     <!-- Day 5 -->
-                     <div class="timeline-container left">
-                        <div class="timeline-content">
-                            <h4>September 9 - Tuesday</h4>
-                            <p><i class="fas fa-calendar-day"></i>Day 6: Gaya - Main Pind Daan Ceremony & Ritual Sites</p>
-                            <p><i class="fas fa-bed"></i>Overnight Stay: Gaya</p>
+                     <div class="day-block row">
+                        <div class="col-md-2 text-center"><div class="day-number mx-auto">Day 5</div></div>
+                        <div class="col-md-5">
+                            <h3>Gaya - Main Pind Daan Ceremony & Ritual Sites</h3>
+                            <p>The main day for performing the sacred Pind Daan ceremony.</p>
+                            <ul>
+                                <li><b>Morning Rituals:</b> Holy bath in the Falgu River, perform Sankalp, offer Pinds, and conduct Tarpan.</li>
+                                <li><b>Akshay Vat Tree:</b> Make offerings under the eternal banyan tree.</li>
+                                <li><b>Optional Pretshila Hill Visit.</b></li>
+                            </ul>
+                            <p><b>Overnight Stay:</b> Gaya</p>
+                        </div>
+                        <div class="col-md-5 d-flex align-items-center">
+                            <img src="assets/img/gaya.jpg" class="img-fluid" alt="Pind Daan Ritual">
+                        </div>
+                    </div>
+
+                    <!-- Day 6 -->
+                    <div class="day-block row">
+                        <div class="col-md-2 text-center"><div class="day-number mx-auto">Day 6</div></div>
+                        <div class="col-md-5">
+                            <h3>Bodh Gaya Visit (Optional) & Departure</h3>
+                            <p>After breakfast, you have the option to visit Bodh Gaya (13 km away) before your departure.</p>
+                            <ul>
+                                <li><b>Mahabodhi Temple:</b> UNESCO World Heritage Site.</li>
+                                <li><b>Bodhi Tree & Monasteries.</b></li>
+                            </ul>
+                            <p>After your visit, transfer to Gaya Airport or Railway Station for your departure.</p>
+                        </div>
+                        <div class="col-md-5 d-flex align-items-center">
+                            <img src="assets/img/Bodh_Gaya.jpg" class="img-fluid" alt="Mahabodhi Temple">
                         </div>
                     </div>
                     
-                    <!-- Day 6 -->
-                    <div class="timeline-container right">
-                        <div class="timeline-content">
-                            <h4>September 10 - Wednesday</h4>
-                             <p><i class="fas fa-sign-out-alt"></i>Check out from Hotel Taj Darbar</p>
-                            <p><i class="fas fa-calendar-day"></i>Day 7: Bodh Gaya Visit (Optional) - Departure</p>
-                        </div>
-                    </div>
-
                 </div>
-
+                
                 <div class="text-center mt-5">
-                    <!-- <a href="index.html#contactForm" class="cta-button">Book This Tour</a><br> -->
+                    <!-- <a href="index.html#contactForm" class="cta-button">Book This Tour</a> -->
+                     <br>
                     <a href="all-packages.html" class="back-to-packages-link"><i class="fas fa-arrow-left"></i> Back to All Packages</a>
                 </div>
 
@@ -286,4 +387,3 @@
     <script src="./assets/js/main.js"></script>
 </body>
 </html>
-
