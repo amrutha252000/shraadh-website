@@ -517,7 +517,7 @@
             
             resultsContainer.innerHTML = `
                 <p style="text-align: center; color: var(--text-dark);">
-                    Please wait, we are working on your output...
+                    Please wait, we are calculating the accurate Shraadh date for your loved one.
                 </p>
                 <div class="loader"></div>
             `;
@@ -527,7 +527,7 @@
 
             try {
                 // --- IMPORTANT: Replace with your deployed Flask app URL ---
-                const backendUrl = 'https://shraadh-website-backend-akh6.onrender.com/submit';
+                const backendUrl = 'https://shraadh-website-backend.onrender.com/submit';
 
                 const response = await fetch(backendUrl, {
                     method: 'POST',
